@@ -1,4 +1,9 @@
-﻿using System;
+﻿/**************************************
+ * Carlos Javier López Cruz
+ * javier1604@gmail.com
+ * ***********************************/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +13,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace cap
+namespace apl.Gui
 {
-    public partial class Form1 : Form
+    public partial class FMain : Form
     {
-        public Form1()
+        public FMain()
         {
             InitializeComponent();
         }
