@@ -5,14 +5,6 @@
 
 using apl.Gui;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace cap
 {
@@ -23,6 +15,12 @@ namespace cap
             InitializeComponent();
 
             Text = "Control Administrativo Personal";
+            this.statusStripMain.Items.Add("iCPAC-cap");
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

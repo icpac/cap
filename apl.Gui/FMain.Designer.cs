@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.statusStripMain = new System.Windows.Forms.StatusStrip();
+            this.SuspendLayout();
+            // 
+            // statusStripMain
+            // 
+            this.statusStripMain.Location = new System.Drawing.Point(0, 428);
+            this.statusStripMain.Name = "statusStripMain";
+            this.statusStripMain.Size = new System.Drawing.Size(800, 22);
+            this.statusStripMain.TabIndex = 0;
+            this.statusStripMain.Text = "statusStrip1";
+            // 
+            // FMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.statusStripMain);
+            this.Name = "FMain";
             this.Text = "FMain";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        protected System.Windows.Forms.StatusStrip statusStripMain;
     }
 }
