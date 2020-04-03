@@ -22,5 +22,11 @@ namespace cap
         {
             Close();
         }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AcercaDe frm = new AcercaDe();
+            frm.Show();
+        }
     }
 }
