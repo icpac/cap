@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pBottom.SuspendLayout();
             this.pButtons.SuspendLayout();
+            this.pCent.SuspendLayout();
             this.SuspendLayout();
             // 
             // pBottom
@@ -43,6 +47,9 @@
             // 
             // pCent
             // 
+            this.pCent.Controls.Add(this.label2);
+            this.pCent.Controls.Add(this.linkLabel1);
+            this.pCent.Controls.Add(this.label1);
             this.pCent.Size = new System.Drawing.Size(442, 209);
             // 
             // pDow
@@ -63,19 +70,53 @@
             // 
             this.pIzq.Size = new System.Drawing.Size(5, 219);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Control Administrativo Personal";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(18, 46);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(76, 13);
+            this.linkLabel1.TabIndex = 1;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "www.icpac.mx";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Versión: 1.0";
+            // 
             // AcercaDe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 250);
             this.Name = "AcercaDe";
-            this.Text = "AcercaDe";
+            this.Text = "Acerca de";
             this.pBottom.ResumeLayout(false);
             this.pButtons.ResumeLayout(false);
+            this.pCent.ResumeLayout(false);
+            this.pCent.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label1;
     }
 }
