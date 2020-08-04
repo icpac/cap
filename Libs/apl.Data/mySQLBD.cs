@@ -1,10 +1,9 @@
 /*
- * User: Javier Cruz
+ * Autor: Tlacaelel Icpac
  * Date: Mié Jun 30 2004
  * Time: 03:51 p.m.
  * 
- * Derechos:	(C) 2004-2004 by icpac
- * Correo:		icpac@correo.unam.mx
+ * Correo:		tlacaelel.icpac@gmail.com
  * 
  * mySQLBD.cs		Acceso a la base de datos MySQL.
  */
