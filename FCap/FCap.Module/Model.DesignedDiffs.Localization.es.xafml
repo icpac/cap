@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems>
+    <Items>
+      <Item Id="Comunes">
+        <Items>
+          <Item Id="ReportsV2" Caption="Reportes" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Views>
+    <DetailView Id="ChangeDatabaseStandardAuthenticationLogonParametersWeb_DetailView">
+      <Items>
+        <StaticText Id="LogonText" Text="Bienvenido! Por favor ingrese su nombre de usuario y contraseña a continuación." />
+      </Items>
+    </DetailView>
+  </Views>
+</Application>

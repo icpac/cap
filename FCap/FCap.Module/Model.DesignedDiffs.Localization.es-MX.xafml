@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Copyright="www.icpac.mx">
+  <NavigationItems>
+    <Items>
+      <Item Id="Comunes" Caption="Comunes">
+        <Items>
+          <Item Id="VentasPeriodo" Caption="Ventas por Periodo" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Views>
+    <DetailView Id="ChangeDatabaseStandardAuthenticationLogonParameters_DetailView">
+      <Items>
+        <StaticImage Id="Imagen" Caption="Imagen(4)" />
+        <StaticText Id="LogonText" Text="¡Bienvenido! A continuación capture su usuario y contraseña." Caption="LogonText(11)" />
+        <StaticText Id="PasswordHint" Text="(Por omisión, el usuario 'factura', no tiene contraseña)" Caption="   " />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="ChangeDatabaseStandardAuthenticationLogonParameters" Caption="ChangeDatabaseStandardAuthenticationLogonParameters">
+              <LayoutGroup Id="Auto5b00e1ec-e864-46fa-a0bd-82e5fbaa080e" Caption="Auto5b00e1ec-e864-46fa-a0bd-82e5fbaa080e(5)" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ChangeDatabaseStandardAuthenticationLogonParametersWeb_DetailView">
+      <Items>
+        <StaticImage Id="LogonImage" Caption="LogonImage(8)" />
+        <StaticText Id="LogonText" Text="Bienvenido! Por favor ingrese su clave, nombre de usuario y contraseña a continuación." Caption="LogonText(9)" />
+      </Items>
+    </DetailView>
+    <DetailView Id="Cliente_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="Cliente">
+                <LayoutGroup Id="Cliente_col1">
+                  <LayoutGroup Id="Autof598dbd7-2237-4bf4-b815-d7a6d00f394a">
+                    <LayoutGroup Id="Auto357067c5-38af-4970-88ee-8b16f7628888">
+                      <LayoutGroup Id="Auto10127441-7d0d-4de4-8b9c-ccf18c2ec5cd" Caption="Auto10127441-7d0d-4de4-8b9c-ccf18c2ec5cd(8)">
+                        <LayoutGroup Id="Auto3360374b-2918-4849-92c7-cfda59a073f7" Caption="Auto3360374b-2918-4849-92c7-cfda59a073f7(9)" />
+                        <LayoutGroup Id="Auto1d02d5a0-6898-44a6-aabe-063f1dcaf8ce" Caption="Auto1d02d5a0-6898-44a6-aabe-063f1dcaf8ce(21)" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Cotizacion_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="DocumenSal">
+              <LayoutGroup Id="Auto1439b4f7-1f57-4811-948b-52fcc3f1efa3" Caption="Auto1439b4f7-1f57-4811-948b-52fcc3f1efa3(4)" />
+              <LayoutGroup Id="Auto3ed7657c-2f72-44b7-ba52-8cbe9a2f8f6b" Caption="Auto3ed7657c-2f72-44b7-ba52-8cbe9a2f8f6b(10)" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Auto941952da-35ef-400e-aff2-21de04a519d7" Caption="Auto941952da-35ef-400e-aff2-21de04a519d7(17)">
+            <LayoutGroup Id="Autoab570062-ada9-4aba-bb4c-1b77819ac5b0" Caption="Autoab570062-ada9-4aba-bb4c-1b77819ac5b0(19)" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Empleado_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item2">
+              <LayoutGroup Id="EmpleadoBase">
+                <LayoutGroup Id="EmpleadoBase_col1">
+                  <LayoutGroup Id="Item1" Caption="Nómina" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Producto_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="Item3">
+                <LayoutGroup Id="Precios_Group1" Caption="Precios" />
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Ventas_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="Item4" Caption="Contabilidad" />
+              <LayoutGroup Id="Item6" Caption="Nomina" />
+            </TabbedGroup>
+            <LayoutGroup Id="Auto692acf9d-fd45-4956-929e-ca9a63b3f9ed" Caption="Auto692acf9d-fd45-4956-929e-ca9a63b3f9ed(46)">
+              <LayoutGroup Id="Auto190da8a5-7cf3-43cc-beec-d258a77ed424" Caption="Auto190da8a5-7cf3-43cc-beec-d258a77ed424(47)" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
