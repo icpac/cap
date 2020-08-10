@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="Cap.Generales.BusinessObjects.Direccion.Direccion" IsDesigned="True" />
+  </BOModel>
+  <Views>
+    <DetailView Id="Direccion_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Direccion" RelativeSize="100">
+              <LayoutGroup Id="Direccion_col1" RelativeSize="50">
+                <LayoutItem Id="CP" RelativeSize="5.6737588652482271" ViewItem="CP" />
+                <LayoutItem Id="Calle" RelativeSize="4.25531914893617" ViewItem="Calle" />
+                <LayoutItem Id="Numero" RelativeSize="4.25531914893617" ViewItem="Numero" />
+                <LayoutItem Id="Interior" RelativeSize="4.25531914893617" ViewItem="Interior" />
+                <LayoutItem Id="Colonia" RelativeSize="4.25531914893617" ViewItem="Colonia" />
+                <LayoutItem Id="Municipio" RelativeSize="4.25531914893617" ViewItem="Municipio" />
+                <LayoutItem Id="Ciudad" RelativeSize="4.25531914893617" ViewItem="Ciudad" />
+                <LayoutItem Id="Estado" RelativeSize="4.25531914893617" ViewItem="Estado" />
+                <LayoutItem Id="Pais" RelativeSize="4.25531914893617" ViewItem="Pais" />
+                <LayoutItem Id="Referencia" ViewItem="Referencia" Index="9" RelativeSize="4.25531914893617" IsNewNode="True" />
+                <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="10" RelativeSize="56.028368794326241" Caption="Teléfonos" IsNewNode="True">
+                  <LayoutItem Id="TelGnralLad" ViewItem="TelGnralLad" Index="0" RelativeSize="11.347517730496454" IsNewNode="True" />
+                  <LayoutItem Id="TelefonoGeneral" ViewItem="TelefonoGeneral" Index="1" RelativeSize="8.51063829787234" IsNewNode="True" />
+                  <LayoutItem Id="TelMovLad" ViewItem="TelMovLad" Index="2" RelativeSize="8.51063829787234" IsNewNode="True" />
+                  <LayoutItem Id="TelefonoMovil" ViewItem="TelefonoMovil" Index="3" RelativeSize="71.63120567375887" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Direccion_col2" RelativeSize="50">
+                <LayoutItem Id="TelefonoGeneral" Index="0" RelativeSize="5.6737588652482271" ViewItem="TelefonoGeneral" Removed="True" />
+                <LayoutItem Id="TelefonoMovil" Index="0" RelativeSize="5.6737588652482271" ViewItem="TelefonoMovil" Removed="True" />
+                <LayoutItem Id="TelGnralLad" Index="0" RelativeSize="5.6737588652482271" ViewItem="TelGnralLad" Removed="True" />
+                <LayoutItem Id="TelMovLad" Index="0" RelativeSize="5.6737588652482271" ViewItem="TelMovLad" Removed="True" />
+                <LayoutItem Id="Url" Index="0" RelativeSize="5.6737588652482271" ViewItem="Url" />
+                <LayoutItem Id="Email" Index="1" RelativeSize="4.25531914893617" ViewItem="Email" />
+                <LayoutItem Id="Location" Index="2" RelativeSize="90.0709219858156" ViewItem="Location" />
+                <LayoutItem Id="Referencia" ViewItem="Referencia" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Direccion_ListView">
+      <Columns>
+        <ColumnInfo Id="Compania" Index="-1" />
+        <ColumnInfo Id="CP" Index="0" />
+        <ColumnInfo Id="Calle" Index="1" />
+        <ColumnInfo Id="TelefonoGeneral" Index="2" />
+        <ColumnInfo Id="Email" Index="3" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>
