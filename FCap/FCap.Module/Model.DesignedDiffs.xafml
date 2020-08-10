@@ -460,9 +460,9 @@
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">
-            <TabbedGroup Id="Item1" CaptionLocation="Top" Index="0" RelativeSize="54.5144804088586" IsNewNode="True">
+            <TabbedGroup Id="Item1" CaptionLocation="Top" Index="0" RelativeSize="47.119645494830131" IsNewNode="True">
               <LayoutGroup Id="Ventas" ShowCaption="True" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
-                <LayoutGroup Id="Ventas_col1" ShowCaption="False" Index="0" RelativeSize="50" IsNewNode="True">
+                <LayoutGroup Id="Ventas_col1" ShowCaption="False" Index="0" RelativeSize="49.75845410628019" IsNewNode="True">
                   <LayoutItem Id="VntCfdi.UltFactura" ViewItem="VntCfdi.UltFactura" Index="0" RelativeSize="11.428571428571429" IsNewNode="True" />
                   <LayoutItem Id="VntCfdi.Serie" ViewItem="VntCfdi.Serie" Index="1" RelativeSize="8.5714285714285712" IsNewNode="True" />
                   <LayoutItem Id="VntCfdi.UltDevolucion" ViewItem="VntCfdi.UltDevolucion" Index="2" RelativeSize="8.5714285714285712" IsNewNode="True" />
@@ -475,7 +475,7 @@
                   <LayoutItem Id="VntCfdi.CncptCbr" ViewItem="VntCfdi.CncptCbr" Index="9" RelativeSize="8.5714285714285712" IsNewNode="True" />
                   <LayoutItem Id="VntCfdi.CncptPg" ViewItem="VntCfdi.CncptPg" Index="10" RelativeSize="11.428571428571429" IsNewNode="True" />
                 </LayoutGroup>
-                <LayoutGroup Id="Ventas_col2" ShowCaption="False" Index="1" RelativeSize="50" IsNewNode="True">
+                <LayoutGroup Id="Ventas_col2" ShowCaption="False" Index="1" RelativeSize="50.24154589371981" IsNewNode="True">
                   <LayoutItem Id="VntCfdi.SendM" ViewItem="VntCfdi.SendM" Index="0" RelativeSize="11.428571428571429" IsNewNode="True" />
                   <LayoutItem Id="VntCfdi.SendCopy" ViewItem="VntCfdi.SendCopy" Index="1" RelativeSize="8.5714285714285712" IsNewNode="True" />
                   <LayoutItem Id="LeyImpst2" ViewItem="LeyImpst2" SizeConstraintsType="Default" Index="2" RelativeSize="25.714285714285715" IsNewNode="True" />
@@ -496,15 +496,7 @@
                 <LayoutItem Id="VntCfdi.NumrDecmls" ViewItem="VntCfdi.NumrDecmls" Index="1" RelativeSize="8.5714285714285712" IsNewNode="True" />
                 <LayoutItem Id="Item5" Index="2" RelativeSize="80" IsNewNode="True" />
               </LayoutGroup>
-              <LayoutGroup Id="Item4" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="3" RelativeSize="100" Caption="Contabilidad" IsNewNode="True">
-                <LayoutItem Id="Cuenta" ViewItem="Cuenta" Index="0" RelativeSize="11.428571428571429" IsNewNode="True" />
-                <LayoutItem Id="UltPolz" ViewItem="UltPolz" Index="1" RelativeSize="8.5714285714285712" IsNewNode="True" />
-                <LayoutItem Id="DgtPrmrNvl" ViewItem="DgtPrmrNvl" Index="2" RelativeSize="8.5714285714285712" IsNewNode="True" />
-                <LayoutItem Id="DgtSgndNvl" ViewItem="DgtSgndNvl" Index="3" RelativeSize="8.5714285714285712" IsNewNode="True" />
-                <LayoutItem Id="DgtTrcrNvl" ViewItem="DgtTrcrNvl" Index="4" RelativeSize="8.5714285714285712" IsNewNode="True" />
-                <LayoutItem Id="DgtCrtNvl" ViewItem="DgtCrtNvl" Index="5" RelativeSize="54.285714285714285" IsNewNode="True" />
-              </LayoutGroup>
-              <LayoutGroup Id="Item6" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="4" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Item6" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="3" RelativeSize="100" Caption="Nómina" IsNewNode="True">
                 <LayoutItem Id="UltEmpl" ViewItem="UltEmpl" Index="0" RelativeSize="11.428571428571429" IsNewNode="True" />
                 <LayoutItem Id="UltNom" ViewItem="UltNom" Index="1" RelativeSize="8.5714285714285712" IsNewNode="True" />
                 <LayoutItem Id="UltRec" ViewItem="UltRec" Index="2" RelativeSize="8.5714285714285712" IsNewNode="True" />
@@ -513,10 +505,10 @@
                 <LayoutItem Id="SrNmn" ViewItem="SrNmn" Index="5" RelativeSize="54.285714285714285" IsNewNode="True" />
               </LayoutGroup>
             </TabbedGroup>
-            <LayoutGroup Id="Auto692acf9d-fd45-4956-929e-ca9a63b3f9ed" ShowCaption="False" Direction="Vertical" Index="1" RelativeSize="45.4855195911414" IsNewNode="True">
+            <LayoutGroup Id="Auto692acf9d-fd45-4956-929e-ca9a63b3f9ed" ShowCaption="False" Direction="Vertical" Index="1" RelativeSize="52.880354505169869" IsNewNode="True">
               <LayoutGroup Id="Auto190da8a5-7cf3-43cc-beec-d258a77ed424" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
-                <LayoutItem Id="VntCfdi.CapMayus" ViewItem="VntCfdi.CapMayus" Index="0" RelativeSize="11.235955056179776" IsNewNode="True" />
-                <LayoutItem Id="VntCfdi.RutaPdfVnts" ViewItem="VntCfdi.RutaPdfVnts" Index="1" RelativeSize="88.764044943820224" IsNewNode="True" />
+                <LayoutItem Id="VntCfdi.CapMayus" ViewItem="VntCfdi.CapMayus" Index="0" RelativeSize="8.3798882681564244" IsNewNode="True" />
+                <LayoutItem Id="VntCfdi.RutaPdfVnts" ViewItem="VntCfdi.RutaPdfVnts" Index="1" RelativeSize="91.620111731843579" IsNewNode="True" />
               </LayoutGroup>
             </LayoutGroup>
             <LayoutGroup Id="Ventas" RelativeSize="27.04" Removed="True">

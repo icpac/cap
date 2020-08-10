@@ -102,7 +102,6 @@
         <LayoutGroup Id="Main">
           <LayoutGroup Id="SimpleEditors">
             <TabbedGroup Id="Item1">
-              <LayoutGroup Id="Item4" Caption="Contabilidad" />
               <LayoutGroup Id="Item6" Caption="Nomina" />
             </TabbedGroup>
             <LayoutGroup Id="Auto692acf9d-fd45-4956-929e-ca9a63b3f9ed" Caption="Auto692acf9d-fd45-4956-929e-ca9a63b3f9ed(46)">
