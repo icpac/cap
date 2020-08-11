@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="FCap.Module.BusinessObjects.Producto" IsDesigned="True" ImageName="BO_Product" DefaultLookupEditorMode="AllItemsWithSearch" />
+  </BOModel>
+  <Views>
+    <DetailView Id="Producto_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="44.281045751633989">
+            <LayoutGroup Id="Producto" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="Producto_col1" RelativeSize="85.608856088560884">
+                <LayoutGroup Id="Autod160c056-d5d6-47fd-855f-882e8f0960f2" ShowCaption="False" Caption="Autod160c056-d5d6-47fd-855f-882e8f0960f2(5)" Direction="Horizontal" Index="0" RelativeSize="16.379310344827587" IsNewNode="True">
+                  <LayoutItem Id="Clave" ViewItem="Clave" SizeConstraintsType="Default" Index="0" RelativeSize="49.712973593570609" IsNewNode="True" />
+                  <LayoutItem Id="Status" ViewItem="Status" SizeConstraintsType="Default" Index="1" RelativeSize="50.287026406429391" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Descripcion" SizeConstraintsType="Default" RelativeSize="10.344827586206897" ViewItem="Descripcion" />
+                <LayoutGroup Id="Auto33caa5ee-12d1-4d24-9118-ee75ee0723b2" ShowCaption="False" Caption="Auto33caa5ee-12d1-4d24-9118-ee75ee0723b2(7)" Direction="Horizontal" Index="2" RelativeSize="14.224137931034482" IsNewNode="True">
+                  <LayoutItem Id="CapEnFact" ViewItem="CapEnFact" SizeConstraintsType="Default" Index="0" RelativeSize="49.942594718714119" IsNewNode="True" />
+                  <LayoutItem Id="PrVnta" ViewItem="PrVnta" SizeConstraintsType="Default" Index="1" RelativeSize="50.057405281285881" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto669bfaac-1eb7-4dd1-919b-b6732ea33125" ShowCaption="False" Caption="Auto669bfaac-1eb7-4dd1-919b-b6732ea33125(10)" Index="3" RelativeSize="59.051724137931032" IsNewNode="True">
+                  <LayoutGroup Id="Auto8f2777d4-585b-4dc4-9cfa-4143554f69cd" ShowCaption="False" Caption="Auto8f2777d4-585b-4dc4-9cfa-4143554f69cd(11)" Direction="Horizontal" Index="0" RelativeSize="24.087591240875913" IsNewNode="True">
+                    <LayoutItem Id="PrecioPublico" ViewItem="PrecioPublico" SizeConstraintsType="Default" Index="0" RelativeSize="50.287026406429391" IsNewNode="True" />
+                    <LayoutItem Id="USalida" ViewItem="USalida" SizeConstraintsType="Default" Index="1" RelativeSize="49.712973593570609" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Auto17ea6203-67e0-4b4d-b62b-3ea5990996e4" ShowCaption="False" Caption="Auto17ea6203-67e0-4b4d-b62b-3ea5990996e4(14)" Index="1" RelativeSize="75.912408759124091" IsNewNode="True">
+                    <LayoutGroup Id="Auto1a158c16-6833-471d-a282-a38be2ed4cd8" ShowCaption="False" Caption="Auto1a158c16-6833-471d-a282-a38be2ed4cd8(15)" Direction="Horizontal" Index="0" RelativeSize="31.73076923076923" IsNewNode="True">
+                      <LayoutItem Id="FechaAlta" ViewItem="FechaAlta" SizeConstraintsType="Default" Index="0" RelativeSize="50.287026406429391" IsNewNode="True" />
+                      <LayoutItem Id="Tipo" ViewItem="Tipo" SizeConstraintsType="Default" Index="1" RelativeSize="49.712973593570609" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Auto0f914267-3aeb-4b23-bde1-62c7119252a8" ShowCaption="False" Caption="Auto0f914267-3aeb-4b23-bde1-62c7119252a8(18)" Index="1" RelativeSize="68.269230769230774" IsNewNode="True">
+                      <LayoutGroup Id="Autod45beb16-5fb8-426e-97db-c3d4f05293bf" ShowCaption="False" Caption="Autod45beb16-5fb8-426e-97db-c3d4f05293bf(19)" Direction="Horizontal" Index="0" RelativeSize="46.478873239436616" IsNewNode="True">
+                        <LayoutItem Id="FUltimaVenta" ViewItem="FUltimaVenta" SizeConstraintsType="Default" Index="0" RelativeSize="50.287026406429391" IsNewNode="True" />
+                        <LayoutItem Id="Esquema" ViewItem="Esquema" SizeConstraintsType="Default" Index="1" RelativeSize="49.712973593570609" IsNewNode="True" />
+                      </LayoutGroup>
+                      <LayoutGroup Id="Auto471bab09-26eb-4ba5-b069-5d4883fc2a00" ShowCaption="False" Caption="Auto471bab09-26eb-4ba5-b069-5d4883fc2a00(22)" Index="1" RelativeSize="53.521126760563384" IsNewNode="True">
+                        <LayoutGroup Id="Autocef72cb2-0b1d-4fa8-894a-365432f25abb" ShowCaption="False" Caption="Autocef72cb2-0b1d-4fa8-894a-365432f25abb(24)" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                          <LayoutItem Id="PRetIsr" ViewItem="PRetIsr" SizeConstraintsType="Default" Index="0" RelativeSize="50.287026406429391" IsNewNode="True" />
+                          <LayoutItem Id="PRetIva" ViewItem="PRetIva" SizeConstraintsType="Default" Index="1" RelativeSize="49.712973593570609" IsNewNode="True" />
+                        </LayoutGroup>
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutItem Id="Marca" SizeConstraintsType="Default" Index="3" RelativeSize="13.043478260869565" ViewItem="Marca" Removed="True" />
+                <LayoutItem Id="PrecioPublico" SizeConstraintsType="Default" Index="3" RelativeSize="13.043478260869565" ViewItem="PrecioPublico" Removed="True" />
+                <LayoutItem Id="FUltimaVenta" SizeConstraintsType="Default" Index="4" RelativeSize="13.043478260869565" ViewItem="FUltimaVenta" Removed="True" />
+                <LayoutItem Id="CapEnFact" SizeConstraintsType="Default" RelativeSize="13.043478260869565" ViewItem="CapEnFact" Removed="True" />
+                <LayoutItem Id="Clave" SizeConstraintsType="Default" RelativeSize="15.384615384615385" ViewItem="Clave" Removed="True" />
+                <LayoutItem Id="Esquema" ViewItem="Esquema" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Producto_col2" RelativeSize="32.510885341074022" Caption="Producto_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="FechaAlta" ViewItem="FechaAlta" Removed="True" />
+                <LayoutItem Id="PRetIsr" ViewItem="PRetIsr" Removed="True" />
+                <LayoutItem Id="PRetIva" ViewItem="PRetIva" Removed="True" />
+                <LayoutItem Id="Status" ViewItem="Status" Removed="True" />
+                <LayoutItem Id="Tipo" ViewItem="Tipo" Removed="True" />
+                <LayoutItem Id="USalida" ViewItem="USalida" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="55.718954248366011" Caption="SizeableEditors" Direction="Horizontal">
+            <LayoutItem Id="DescripcionLarga" ViewItem="DescripcionLarga" Removed="True" />
+            <LayoutItem Id="Notas" ViewItem="Notas" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Producto_ListView">
+      <Columns>
+        <ColumnInfo Id="Marca" Index="-1" />
+        <ColumnInfo Id="PrecioPublico" Index="2" />
+        <ColumnInfo Id="USalida" Index="3" />
+        <ColumnInfo Id="Status" Index="4" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>
