@@ -1,11 +1,11 @@
-#region Copyright (c) 2000-2013 cjlc
+#region
 /*
 {+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++)
 {                                                                   }
-{     cjlc Cap control administrativo personal                      }
+{     tlacaelel.icpac                                               }
+{     Cap control administrativo personal                           }
 {                                                                   }
-{     Copyrigth (c) 2000-2013 cjlc                                  }
-{     Todos los derechos reservados                                 }
+{     2000-2013						                                }
 {                                                                   }
 {*******************************************************************}
  */
