@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Company="iCPAC" Description="Control Escolar">
+  <NavigationItems>
+    <Items>
+      <Item Id="Administracion">
+        <Items>
+          <Item Id="NvCbr" Caption="Nuevo Cargo" />
+          <Item Id="NwPg" Caption="Nuevo Cobro" />
+          <Item Id="DocumentoSalida_ListView" Caption="Cargos" />
+          <Item Id="Cxc_ListView" Caption="Cobros" />
+          <Item Id="Gasto_ListView" Caption="Gastos" />
+          <Item Id="ConceptoCxcxp_ListView" Caption="Conceptos" />
+          <Item Id="Servicio_ListView" Caption="Servicios" />
+        </Items>
+      </Item>
+      <Item Id="Escuela">
+        <Items>
+          <Item Id="Alumno_ListView" Caption="Alumnos" />
+          <Item Id="Curso_ListView" Caption="Cursos" />
+        </Items>
+      </Item>
+      <Item Id="Configuración">
+        <Items>
+          <Item Id="ConceptoGasto_ListView" Caption="Conceptos de Gastos" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Views>
+    <DetailView Id="Alumno_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item3">
+              <LayoutGroup Id="Persona">
+                <LayoutGroup Id="Persona_col1">
+                  <LayoutGroup Id="Auto6b57cd55-3449-463b-981f-19176ea0bfd2">
+                    <LayoutGroup Id="Auto09b5aeb0-a43f-4b74-8323-dd3cf4ecc6ce">
+                      <LayoutGroup Id="Auto1681ab51-ac8f-4b57-89b7-c9e975e30c84">
+                        <LayoutGroup Id="Auto03999d0f-ac2e-4c21-89f4-669025f4825b">
+                          <LayoutGroup Id="Auto6c36e5e5-12e7-44f2-a491-41ef1601f6c7">
+                            <LayoutGroup Id="Auto768b4053-8992-4882-860b-304fefcddfcf">
+                              <LayoutGroup Id="Autoa24731a0-9c6b-4066-a40c-922e19536a8f" Caption="" />
+                            </LayoutGroup>
+                          </LayoutGroup>
+                        </LayoutGroup>
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Alumno_ListView">
+      <Filters>
+        <Filter Id="AlmnsActvs" Caption="Alumnos Activos" />
+        <Filter Id="AlmnsBj" Caption="Alumnos Baja" />
+        <Filter Id="AlmnsEgrsds" Caption="Alumnos Egresados" />
+        <Filter Id="Tds" Caption="Todos" />
+      </Filters>
+    </ListView>
+    <DetailView Id="ChangeDatabaseStandardAuthenticationLogonParameters_DetailView">
+      <Items>
+        <StaticImage Id="Image" Caption="Image(4)" />
+        <StaticText Id="LogonText" Text="¡Bienvenido! A continuación capture su usuario y contraseña." Caption="LogonText(10)" />
+        <StaticText Id="PasswordHint" Caption="   " Text="(Por omisión, el usuario 'escuela', no tiene contraseña)" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="ChangeDatabaseStandardAuthenticationLogonParameters">
+              <LayoutGroup Id="Auto98827f8e-549e-4818-b00c-f99f0eb4fe4e" Caption="Auto98827f8e-549e-4818-b00c-f99f0eb4fe4e(5)" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ChangeDatabaseStandardAuthenticationLogonParametersWeb_DetailView">
+      <Items>
+        <StaticImage Id="LogonImage" Caption="LogonImage(9)" />
+        <StaticText Id="LogonText" Text="Bienvenido! Por favor ingrese su clave, nombre de usuario y contraseña a continuación." Caption="LogonText(8)" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="ChangeDatabaseStandardAuthenticationLogonParametersWeb" Caption="ChangeDatabaseStandardAuthenticationLogonParametersWeb">
+              <LayoutGroup Id="Auto354d0215-d48e-45bc-9393-7c96c3463d23" Caption="Auto354d0215-d48e-45bc-9393-7c96c3463d23(5)" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Cxc_Crgs_ListView">
+      <Columns>
+        <ColumnInfo Id="Cxc.FchApl" Caption="Fecha Aplicación" DisplayFormat="{0:dd MMM yyyy}" />
+        <ColumnInfo Id="Cxc.Sld" Caption="Saldo" />
+      </Columns>
+    </ListView>
+    <ListView Id="Cxc_ListView">
+      <Filters>
+        <Filter Id="AbnsAlt" Caption="Abonos Alta" />
+        <Filter Id="CbrsAlt" Caption="Cobros Alta" />
+        <Filter Id="CbrsCnclds" Caption="Cobros Cancelados" />
+        <Filter Id="CbrsSld" Caption="Cobros Saldo" />
+        <Filter Id="Tds" Caption="Todos" />
+      </Filters>
+    </ListView>
+    <DetailView Id="DocumentoSalida_DetailView">
+      <Items>
+        <PropertyEditor Id="Grd" Caption="Grado" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="DocumentoSalida" Caption="Datos">
+              <LayoutGroup Id="DocumentoSalida_col2" Caption="DocumentoSalida_col2" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="DocumentoSalida_ListView">
+      <Filters>
+        <Filter Id="CrgsAlt" Caption="Cargos Alta" />
+        <Filter Id="CrgsCnclds" Caption="Cargos Cancelados" />
+        <Filter Id="Tds" Caption="Todos" />
+      </Filters>
+    </ListView>
+    <DetailView Id="RPOGastos_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="RPOGastos" Caption="Filtro Gastos" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Tema_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Tema">
+              <TabbedGroup Id="Item2">
+                <LayoutGroup Id="Item1" Caption="Datos">
+                  <LayoutGroup Id="Auto85c0bd57-c2a0-4066-9a35-dac19ab7471a" Caption="" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item4" Caption="Archivos">
+                  <LayoutGroup Id="DElctrnc.Archivos_Group" Caption="Archivos" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item3" Caption="Extras" />
+              </TabbedGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Caption="SizeableEditors" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Escul" Logo="ICPAC2" PreferredLanguage="es-MX">
+  <BOModel>
+    <Class Name="Escul.Module.BusinessObjects.Admin.MovimientoCxc" IsDesigned="True" />
+    <Class Name="Escul.Module.BusinessObjects.Admin.Servicio" IsDesigned="True" ImageName="BO_Sale_Item_v92" />
+    <Class Name="Escul.Module.BusinessObjects.AsistenciaMtr" IsCloneable="True" />
+    <Class Name="Escul.Module.BusinessObjects.AsistenciaMtrAlmns" IsCloneable="True" />
+    <Class Name="Escul.Module.BusinessObjects.CicloEsclr" IsDesigned="True" />
+    <Class Name="Escul.Module.BusinessObjects.Curso" IsDesigned="True" />
+    <Class Name="Escul.Module.BusinessObjects.Escuela" IsDesigned="True" />
+    <Class Name="Escul.Module.BusinessObjects.MateriaGrp" IsCloneable="True" />
+  </BOModel>
+  <NavigationItems DefaultChildItemsDisplayStyle="List" NavigationStyle="Accordion" StartupNavigationItem="">
+    <Items>
+      <Item Id="Default" Index="0" ImageName="User-Options_Large">
+        <Items>
+          <Item Id="Event_ListView" ImageName="BO_Scheduler" ViewId="Event_ListView" ChildItemsDisplayStyle="LargeIcons" IsNewNode="True" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Administracion" Index="1" ImageName="BOPosition2_32x32">
+        <Items>
+          <Item Id="NvCbr" ViewId="DocumentoSalida_DetailView" Index="0" IsNewNode="True" />
+          <Item Id="NwPg" Index="1" ViewId="Cxc_DetailView" IsNewNode="True" />
+          <Item Id="Evento_ListView" Index="2" ViewId="Evento_DetailView" />
+          <Item Id="DocumentoSalida_ListView" Index="3" />
+          <Item Id="Cxc_ListView" Caption="Cuentas" Index="4" />
+          <Item Id="Gasto_ListView" Index="5" />
+          <Item Id="ConceptoCxcxp_ListView" Caption="Concepto" Index="6" />
+        </Items>
+      </Item>
+      <Item Id="Escuela" Index="2" ImageName="BO_Address_32x32">
+        <Items>
+          <Item Id="Curso_ListView" Visible="False" />
+        </Items>
+      </Item>
+      <Item Id="Clientes" Index="3" />
+      <Item Id="Reports" Index="4" ImageName="Report_Bound_32x32" />
+      <Item Id="Configuración" Index="5">
+        <Items>
+          <Item Id="Certificado_ListView" Index="1" />
+          <Item Id="CicloEsclr_ListView" Visible="False" Index="2" />
+          <Item Id="ConceptoGasto_ListView" Index="3" />
+          <Item Id="Correo_ListView" Index="4" />
+          <Item Id="Empresa_ListView" Index="5" />
+          <Item Id="Escuela_ListView" Visible="False" Index="6" />
+          <Item Id="Moneda_ListView" Index="7" />
+          <Item Id="Pago_ListView" Index="8" />
+          <Item Id="PersonaTipos_ListView" Index="9" />
+          <Item Id="ProductoServicio_ListView" Index="10" />
+          <Item Id="Regimen_ListView" Index="11" />
+          <Item Id="Parametros_ListView" Index="12" ViewId="Parametros_DetailView" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="20.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="15.2.9.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="20.1.6.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="AlumnoMtr_ListView" IsGroupFooterVisible="False" />
+    <ListView Id="AsistenciaMtr_Alumnos_ListView" AllowEdit="True">
+      <Columns>
+        <ColumnInfo Id="Almn" Width="55" />
+        <ColumnInfo Id="Asstnc" Width="68" />
+      </Columns>
+    </ListView>
+    <DetailView Id="AsistenciaMtr_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SizeableEditors" RelativeSize="100" Direction="Horizontal" Caption="Notas" Index="0">
+            <LayoutGroup Id="Autof0052497-11b9-4940-8c8b-1118d3455c68" ShowCaption="False" Caption="Autof0052497-11b9-4940-8c8b-1118d3455c68(3)" Index="0" RelativeSize="42.182410423452765" IsNewNode="True">
+              <LayoutItem Id="MtrGrp" ViewItem="MtrGrp" Index="0" RelativeSize="5.3872053872053876" IsNewNode="True" />
+              <LayoutItem Id="Fch" ViewItem="Fch" Index="1" RelativeSize="4.0404040404040407" IsNewNode="True" />
+              <LayoutItem Id="Nts" ViewItem="Nts" Index="2" RelativeSize="90.572390572390574" IsNewNode="True" />
+            </LayoutGroup>
+            <TabbedGroup Id="Tabs" Index="1" RelativeSize="57.817589576547235" IsNewNode="True">
+              <LayoutGroup Id="Alumnos" ShowCaption="True" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Alumnos1" ViewItem="Alumnos" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Temas" ShowCaption="True" Index="1" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Temas" ViewItem="Temas" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutItem Id="Nts" RelativeSize="77.361563517915314" Removed="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Index="1" RelativeSize="33.333333333333336" Removed="True">
+            <LayoutGroup Id="Alumnos" Direction="Horizontal" RelativeSize="100">
+              <LayoutItem Id="Alumnos1" ViewItem="Alumnos" Index="0" RelativeSize="50" IsNewNode="True" />
+              <LayoutItem Id="Alumnos" RelativeSize="50" Index="1" />
+            </LayoutGroup>
+            <LayoutGroup Id="Temas" RelativeSize="100">
+              <LayoutItem Id="Temas" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+          <LayoutGroup Id="SimpleEditors" RelativeSize="6.3973063973063971" Direction="Horizontal" Removed="True">
+            <LayoutGroup Id="AsistenciaMtr" RelativeSize="100" Caption="AsistenciaMtr" Direction="Horizontal" Removed="True">
+              <LayoutItem Id="Fch" RelativeSize="48.387096774193552" Removed="True" />
+              <LayoutItem Id="MtrGrp" RelativeSize="100" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="CalificacionMtr_Alumnos_ListView" AllowEdit="True" />
+    <DetailView Id="CalificacionMtr_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SizeableEditors" Direction="Horizontal" RelativeSize="100" Caption="Notas" Index="0">
+            <LayoutGroup Id="Auto64e412f1-4cc4-4da4-baf3-bdd4e6aa43f8" ShowCaption="False" Caption="Auto64e412f1-4cc4-4da4-baf3-bdd4e6aa43f8(3)" Index="0" RelativeSize="38.599348534201951" IsNewNode="True">
+              <LayoutItem Id="MtrGrp" ViewItem="MtrGrp" Index="0" RelativeSize="5.3872053872053876" IsNewNode="True" />
+              <LayoutItem Id="Nmbr" ViewItem="Nmbr" Index="1" RelativeSize="4.0404040404040407" IsNewNode="True" />
+              <LayoutItem Id="Fch" ViewItem="Fch" Index="2" RelativeSize="4.0404040404040407" IsNewNode="True" />
+              <LayoutItem Id="MdClfccn" ViewItem="MdClfccn" Index="3" RelativeSize="4.0404040404040407" IsNewNode="True" />
+              <LayoutItem Id="Nts" ViewItem="Nts" Index="4" RelativeSize="82.491582491582491" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Alumnos_Group" ShowCaption="True" Caption="Alumnos" Index="1" RelativeSize="61.400651465798049" IsNewNode="True">
+              <LayoutItem Id="Alumnos" ViewItem="Alumnos" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutItem Id="Nts" RelativeSize="77.361563517915314" Removed="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="Alumnos_Group" Removed="True" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="6.3973063973063971" Direction="Horizontal" Removed="True">
+            <LayoutGroup Id="CalificacionMtr" RelativeSize="100" Caption="CalificacionMtr" Direction="Horizontal" Removed="True">
+              <LayoutItem Id="Fch" RelativeSize="34.883720930232556" Removed="True" />
+              <LayoutItem Id="MtrGrp" RelativeSize="100" Removed="True" />
+              <LayoutItem Id="Nmbr" RelativeSize="48.387096774193552" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ChangeDatabaseStandardAuthenticationLogonParameters_DetailView">
+      <Items>
+        <StaticImage Id="Image" SizeMode="AutoSize" ImageName="Security_Permission_72x72" Caption="" HorizontalAlign="Center" IsNewNode="True" />
+        <StaticText Id="LogonText" IsNewNode="True" />
+        <StaticText Id="PasswordHint" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="ChangeDatabaseStandardAuthenticationLogonParameters" Direction="Horizontal" RelativeSize="100" Caption="ChangeDatabaseStandardAuthenticationLogonParameters">
+              <LayoutItem Id="Image" ViewItem="Image" Index="0" RelativeSize="12.805755395683454" IsNewNode="True" />
+              <LayoutGroup Id="Auto98827f8e-549e-4818-b00c-f99f0eb4fe4e" ShowCaption="False" Caption="" Index="1" RelativeSize="87.194244604316552" IsNewNode="True">
+                <LayoutItem Id="LogonText" ViewItem="LogonText" Index="0" RelativeSize="4.5372050816696916" IsNewNode="True" />
+                <LayoutItem Id="Name" ViewItem="Name" Index="1" RelativeSize="4.3557168784029034" IsNewNode="True" />
+                <LayoutItem Id="UserName" ViewItem="UserName" Index="2" RelativeSize="4.3557168784029034" IsNewNode="True" />
+                <LayoutItem Id="Password" ViewItem="Password" Index="3" RelativeSize="4.3557168784029034" IsNewNode="True" />
+                <LayoutItem Id="PasswordHint" ViewItem="PasswordHint" Index="4" RelativeSize="82.3956442831216" ShowCaption="True" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Password" ViewItem="Password" Index="1" RelativeSize="17.624521072796934" Removed="True" />
+              <LayoutItem Id="Name" Removed="True" />
+              <LayoutItem Id="UserName" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ChangeDatabaseStandardAuthenticationLogonParametersWeb_DetailView">
+      <Items>
+        <StaticImage Id="LogonImage" ImageName="BO_Security_Permission_72x72" SvgImageWidth="72" SvgImageHeight="72" SizeMode="AutoSize" VerticalAlign="Middle" IsNewNode="True" />
+        <StaticText Id="LogonText" Text="Welcome! Please enter your user name and password below." IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="ChangeDatabaseStandardAuthenticationLogonParametersWeb" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="Auto354d0215-d48e-45bc-9393-7c96c3463d23" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="LogonImage" ViewItem="LogonImage" Index="0" RelativeSize="14.956521739130436" IsNewNode="True" />
+                <LayoutItem Id="LogonText" ViewItem="LogonText" Index="1" RelativeSize="2.9565217391304346" IsNewNode="True" />
+                <LayoutItem Id="Clv" ViewItem="Clv" Index="2" RelativeSize="4.1739130434782608" IsNewNode="True" />
+                <LayoutItem Id="UserName" ViewItem="UserName" Index="3" RelativeSize="4.1739130434782608" IsNewNode="True" />
+                <LayoutItem Id="Password" ViewItem="Password" Index="4" RelativeSize="73.739130434782609" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Clv" Index="1" RelativeSize="4.1739130434782608" Removed="True" />
+              <LayoutItem Id="UserName" Index="2" RelativeSize="4.1739130434782608" Removed="True" />
+              <LayoutItem Id="Password" Index="3" RelativeSize="87.304347826086953" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Cxc_Crgs_ListView" AllowEdit="True" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="Monto">
+          <Summary>
+            <ColumnSummaryItem Id="SmMntAbns" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="Crg" AllowEdit="False" />
+        <ColumnInfo Id="Cxc.FchApl" PropertyName="Crg.FchApl" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="Cxc.Sld" PropertyName="Crg.Saldo" AllowEdit="False" IsNewNode="True">
+          <Summary IsNewNode="True">
+            <ColumnSummaryItem Id="SmSldCrgs" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <ListView Id="CxcItem_ListView" AllowEdit="True" />
+    <ListView Id="DocumentoSalida_ItemsSalida_ListView" AllowEdit="True" NewItemRowPosition="Top" />
+    <DetailView Id="Event_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="29.6849087893864">
+            <LayoutGroup Id="SubjectGroup" ShowCaption="False" RelativeSize="34.63687150837989">
+              <LayoutItem Id="Subject" RelativeSize="51.612903225806448" />
+              <LayoutItem Id="AllDay" RelativeSize="48.387096774193552" />
+            </LayoutGroup>
+            <LayoutGroup Id="Event" RelativeSize="65.363128491620117">
+              <LayoutGroup Id="Event_col1" RelativeSize="50">
+                <LayoutItem Id="StartOn" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="Label" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="Location" RelativeSize="36.363636363636367" />
+              </LayoutGroup>
+              <LayoutGroup Id="Event_col2" RelativeSize="50">
+                <LayoutItem Id="EndOn" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="Status" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="ReminderTime" ViewItem="ReminderTime" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="35.1575456053068">
+            <LayoutItem Id="Description" RelativeSize="50" />
+            <LayoutItem Id="RecurrenceInfoXml" RelativeSize="50" />
+          </LayoutGroup>
+          <LayoutGroup Id="Resources_Group" Direction="Vertical" RelativeSize="35.1575456053068">
+            <LayoutItem Id="Resources" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Grupo_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="5.0666666666666664">
+            <LayoutGroup Id="Grupo" RelativeSize="100">
+              <LayoutItem Id="Nmbr" RelativeSize="100" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Materias_Group" Direction="Vertical" RelativeSize="94.933333333333337">
+            <LayoutItem Id="Materias" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Materia_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Materia" RelativeSize="100" Caption="Nombre">
+              <TabbedGroup Id="Item3" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Generales" IsNewNode="True">
+                  <LayoutItem Id="Nmbr" ViewItem="Nmbr" Index="0" RelativeSize="5.8931860036832413" IsNewNode="True" />
+                  <LayoutItem Id="Crctrstc" ViewItem="Crctrstc" Index="1" RelativeSize="22.651933701657459" IsNewNode="True" />
+                  <LayoutItem Id="Intncn" ViewItem="Intncn" Index="2" RelativeSize="22.651933701657459" IsNewNode="True" />
+                  <LayoutItem Id="Cmptnc" ViewItem="Cmptnc" Index="3" RelativeSize="22.651933701657459" IsNewNode="True" />
+                  <LayoutItem Id="CmptncPrvs" ViewItem="CmptncPrvs" Index="4" RelativeSize="26.151012891344383" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Temas" ShowCaption="True" Index="1" RelativeSize="100" IsNewNode="True">
+                  <LayoutItem Id="Temas" ViewItem="Temas" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Archivos" ShowCaption="True" Index="2" RelativeSize="100" IsNewNode="True">
+                  <LayoutItem Id="Archivos" ViewItem="Archivos" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+              </TabbedGroup>
+              <LayoutItem Id="Nmbr" RelativeSize="100" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="48.65319865319865" Caption="SizeableEditors" Direction="Horizontal" Removed="True">
+            <LayoutItem Id="Cmptnc" RelativeSize="84.382871536523936" Index="0" Removed="True" />
+            <LayoutItem Id="CmptncPrvs" RelativeSize="100" Index="0" Removed="True" />
+            <LayoutItem Id="Intncn" RelativeSize="51.441241685144121" Index="0" Removed="True" />
+            <LayoutItem Id="Crctrstc" RelativeSize="24.892703862660944" Removed="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="39.225589225589225" Removed="True">
+            <LayoutGroup Id="Archivos" RelativeSize="100">
+              <LayoutItem Id="Archivos" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Temas" RelativeSize="100" Removed="True">
+              <LayoutItem Id="Temas" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Materia_Temas_ListView" IsFooterVisible="True" AutoExpandAllGroups="True">
+      <Columns>
+        <ColumnInfo Id="Nmr" Index="0" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="Dscrpcn" Index="1" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="Drcn">
+          <Summary>
+            <ColumnSummaryItem Id="SumDrcn" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <ListView Id="MateriaGrp_Alumnos_ListView" IsGroupFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="Almn" GroupFooterSummaryType="Count" />
+      </Columns>
+    </ListView>
+    <ListView Id="MateriaGrp_Temas_ListView" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="Drcn">
+          <Summary>
+            <ColumnSummaryItem Id="MGSumDrcn" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <ListView Id="Persona_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Edad" Index="-1" />
+        <ColumnInfo Id="Sexo" Index="-1" />
+        <ColumnInfo Id="NombreCompleto" Index="0" Width="105" />
+      </Columns>
+    </ListView>
+    <DetailView Id="RPOGastos_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RPOGastos" RelativeSize="100">
+              <LayoutGroup Id="RPOGastos_col1" RelativeSize="50">
+                <LayoutItem Id="FchIncl" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="FchFnl" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="Dclrbl" RelativeSize="92.090395480226" />
+              </LayoutGroup>
+              <LayoutGroup Id="RPOGastos_col2" RelativeSize="50">
+                <LayoutItem Id="NDclrbl" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="Gst" RelativeSize="95.480225988700568" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Tema_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Tema" RelativeSize="100">
+              <TabbedGroup Id="Item2" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutGroup Id="Auto85c0bd57-c2a0-4066-9a35-dac19ab7471a" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="6.0721062618595827" IsNewNode="True">
+                    <LayoutItem Id="Nmr" ViewItem="Nmr" Index="0" RelativeSize="49.916805324459233" IsNewNode="True" />
+                    <LayoutItem Id="Drcn" ViewItem="Drcn" Index="1" RelativeSize="50.083194675540767" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="Dscrpcn" ViewItem="Dscrpcn" Index="1" RelativeSize="4.5540796963946866" IsNewNode="True" />
+                  <LayoutItem Id="Nts" ViewItem="Nts" Index="2" RelativeSize="89.373814041745732" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item4" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="1" RelativeSize="100" IsNewNode="True">
+                  <LayoutGroup Id="DElctrnc.Archivos_Group" ShowCaption="True" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="DElctrnc.Archivos" ViewItem="DElctrnc.Archivos" Index="0" RelativeSize="100" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Item3" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="2" RelativeSize="100" IsNewNode="True">
+                  <LayoutItem Id="FchAplccn" ViewItem="FchAplccn" Index="0" RelativeSize="6.0721062618595827" IsNewNode="True" />
+                  <LayoutItem Id="CmptncEspcfc" ViewItem="CmptncEspcfc" Index="1" RelativeSize="31.309297912713472" IsNewNode="True" />
+                  <LayoutItem Id="CmptncGnrc" ViewItem="CmptncGnrc" Index="2" RelativeSize="31.309297912713472" IsNewNode="True" />
+                  <LayoutItem Id="Actvdds" ViewItem="Actvdds" Index="3" RelativeSize="31.309297912713472" IsNewNode="True" />
+                </LayoutGroup>
+              </TabbedGroup>
+              <LayoutItem Id="Drcn" RelativeSize="15.189873417721518" Index="1" Removed="True" />
+              <LayoutItem Id="FchAplccn" RelativeSize="8.8495575221238933" Index="1" Removed="True" />
+              <LayoutItem Id="Dscrpcn" RelativeSize="16.901408450704224" Removed="True" />
+              <LayoutItem Id="Nmr" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="DElctrnc.Archivos_Group" Direction="Vertical" RelativeSize="29.043478260869566" Removed="True">
+            <LayoutItem Id="DElctrnc.Archivos" RelativeSize="100" />
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="45.217391304347828" Direction="Horizontal" Removed="True">
+            <LayoutItem Id="Actvdds" RelativeSize="100" Index="0" Removed="True" />
+            <LayoutItem Id="CmptncEspcfc" RelativeSize="41.92307692307692" Index="0" Removed="True" />
+            <LayoutItem Id="CmptncGnrc" RelativeSize="69.615384615384613" Index="0" Removed="True" />
+            <LayoutItem Id="Nts" RelativeSize="25.333333333333332" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
