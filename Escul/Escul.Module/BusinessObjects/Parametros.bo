@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="Escul.Module.BusinessObjects.Parametros" IsDesigned="True" />
+  </BOModel>
+  <Views>
+    <DetailView Id="Parametros_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Parametros" RelativeSize="100">
+              <LayoutGroup Id="Parametros_col1" RelativeSize="49.921011058451818">
+                <LayoutItem Id="CiclActl" RelativeSize="5.161290322580645" ViewItem="CiclActl" />
+                <LayoutItem Id="UltmPg" RelativeSize="3.870967741935484" Index="1" ViewItem="UltmPg" />
+                <LayoutItem Id="UltmPgNDclrbl" Index="2" RelativeSize="3.870967741935484" ViewItem="UltmPgNDclrbl" />
+                <LayoutItem Id="Inscrpcn" RelativeSize="3.870967741935484" Index="3" ViewItem="Inscrpcn" />
+                <LayoutItem Id="CncptPg" RelativeSize="3.870967741935484" Index="4" ViewItem="CncptPg" />
+                <LayoutItem Id="CncptCbr" RelativeSize="3.870967741935484" Index="5" ViewItem="CncptCbr" />
+                <LayoutItem Id="SrvcBc" ViewItem="SrvcBc" Index="6" RelativeSize="3.870967741935484" IsNewNode="True" />
+                <LayoutItem Id="Uppr" ViewItem="Uppr" Index="7" RelativeSize="3.870967741935484" IsNewNode="True" />
+                <LayoutItem Id="CiclAct" ViewItem="CiclAct" Index="8" RelativeSize="67.741935483870961" IsNewNode="True" />
+                <LayoutItem Id="UltmFl" RelativeSize="4.5133991537376588" ViewItem="UltmFl" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Parametros_col2" RelativeSize="50.078988941548182" Caption="Parametros_col2">
+                <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Descuento Inscripción" IsNewNode="True">
+                  <LayoutItem Id="Prctj1" ViewItem="Prctj1" Index="0" RelativeSize="5.5363321799307954" IsNewNode="True" />
+                  <LayoutItem Id="Prctj2" ViewItem="Prctj2" Index="1" RelativeSize="4.1522491349480966" IsNewNode="True" />
+                  <LayoutItem Id="Prctj3" ViewItem="Prctj3" Index="2" RelativeSize="4.1522491349480966" IsNewNode="True" />
+                  <LayoutItem Id="Prctj4" ViewItem="Prctj4" Index="3" RelativeSize="4.1522491349480966" IsNewNode="True" />
+                  <LayoutItem Id="Prctj5" ViewItem="Prctj5" Index="4" RelativeSize="82.006920415224911" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Prctj3" RelativeSize="4.5133991537376588" Index="0" ViewItem="Prctj3" Removed="True" />
+                <LayoutItem Id="Prctj4" RelativeSize="4.5133991537376588" Index="0" ViewItem="Prctj4" Removed="True" />
+                <LayoutItem Id="Prctj5" RelativeSize="4.5133991537376588" Index="0" ViewItem="Prctj5" Removed="True" />
+                <LayoutItem Id="SrvcBc" Index="1" RelativeSize="3.870967741935484" ViewItem="SrvcBc" Removed="True" />
+                <LayoutItem Id="Uppr" Index="1" RelativeSize="72.58064516129032" ViewItem="Uppr" Removed="True" />
+                <LayoutItem Id="Prctj2" RelativeSize="4.5197740112994351" ViewItem="Prctj2" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
