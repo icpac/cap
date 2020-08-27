@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Description="Punto de Venta">
+  <NavigationItems>
+    <Items>
+      <Item Id="Ventas">
+        <Items>
+          <Item Id="NvVnt" Caption="Nueva Venta" />
+        </Items>
+      </Item>
+      <Item Id="Inventarios">
+        <Items>
+          <Item Id="Producto_ListView" Caption="Productos" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Views>
+    <DetailView Id="ChangeDatabaseStandardAuthenticationLogonParameters_DetailView">
+      <Items>
+        <StaticImage Id="Imagen" Caption="Imagen(4)" />
+        <StaticText Id="LogonText" Caption="LogonText(11)" Text="¡Bienvenido! A continuación capture su usuario y contraseña." />
+        <StaticText Id="PasswordHint" Text="(Por omisión, el usuario 'ventas', no tiene contraseña)" Caption=" " />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="ChangeDatabaseStandardAuthenticationLogonParameters" Caption="ChangeDatabaseStandardAuthenticationLogonParameters">
+              <LayoutGroup Id="Auto6507b3d5-4f27-4a97-b9e6-975ff3a41667" Caption="Auto6507b3d5-4f27-4a97-b9e6-975ff3a41667(5)" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ChangeDatabaseStandardAuthenticationLogonParametersWeb_DetailView">
+      <Items>
+        <StaticImage Id="LogonImage" Caption="LogonImage(8)" />
+        <StaticText Id="LogonText" Text="Bienvenido! Por favor ingrese su clave, nombre de usuario y contraseña a continuación." Caption="LogonText(9)" />
+      </Items>
+    </DetailView>
+    <DetailView Id="Cliente_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="Cliente">
+                <LayoutGroup Id="Cliente_col1">
+                  <LayoutGroup Id="Autof598dbd7-2237-4bf4-b815-d7a6d00f394a">
+                    <LayoutGroup Id="Auto357067c5-38af-4970-88ee-8b16f7628888">
+                      <LayoutGroup Id="Auto10127441-7d0d-4de4-8b9c-ccf18c2ec5cd" Caption="Auto10127441-7d0d-4de4-8b9c-ccf18c2ec5cd(8)">
+                        <LayoutGroup Id="Auto3360374b-2918-4849-92c7-cfda59a073f7" Caption="Auto3360374b-2918-4849-92c7-cfda59a073f7(9)" />
+                        <LayoutGroup Id="Auto1d02d5a0-6898-44a6-aabe-063f1dcaf8ce" Caption="Auto1d02d5a0-6898-44a6-aabe-063f1dcaf8ce(21)" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Parametros_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item2">
+              <LayoutGroup Id="Item3" Caption="Punto de Venta" />
+              <LayoutGroup Id="Item1" Caption="Facturas">
+                <LayoutGroup Id="Autoafc9485f-bb99-4e41-81a1-1024995ffc30" Caption="Autoafc9485f-bb99-4e41-81a1-1024995ffc30(14)" />
+                <LayoutGroup Id="Auto218f22d4-0f26-4683-91cb-c2536238a81a" Caption="Auto218f22d4-0f26-4683-91cb-c2536238a81a(25)" />
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutGroup Id="Parametros">
+              <LayoutGroup Id="Parametros_col2" Caption="Parametros_col2" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Persona_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Persona">
+              <LayoutGroup Id="Persona_col2" Caption="Persona_col2" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Proveedor_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="ProveedorCliente">
+                <LayoutGroup Id="ProveedorCliente_col1">
+                  <LayoutGroup Id="Auto38e8679d-76f0-432d-b7b2-1d131388266f" Caption="Auto38e8679d-76f0-432d-b7b2-1d131388266f(6)">
+                    <LayoutGroup Id="Auto89dfcfbb-e7c7-40bd-bbcb-8086d81ff9f1" Caption="Auto89dfcfbb-e7c7-40bd-bbcb-8086d81ff9f1(7)" />
+                    <LayoutGroup Id="Auto09ba9aff-8373-43bc-91e1-cc3d9f6ed3be" Caption="Auto09ba9aff-8373-43bc-91e1-cc3d9f6ed3be(14)" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Venta_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="AddItem" Caption="Agregar Item" />
+        <ActionContainerViewItem Id="SvNw" Caption="Guardar y Nuevo" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Venta">
+              <LayoutGroup Id="Venta_col1">
+                <LayoutGroup Id="Auto579b237f-6e7f-4311-bccd-32111437e58c" Caption="" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Auto8a5444cd-e185-4ca0-b8e3-bb8cd519b378" Caption="Auto8a5444cd-e185-4ca0-b8e3-bb8cd519b378(14)" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
