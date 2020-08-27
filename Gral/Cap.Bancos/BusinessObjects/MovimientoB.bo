@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="Cap.Bancos.BusinessObjects.MovimientoB" IsDesigned="True" IsCloneable="True" />
+  </BOModel>
+  <Views>
+    <ListView Id="MovimientoB_ListView">
+      <Columns>
+        <ColumnInfo Id="CuentaDescrip" PropertyName="Cuenta.Descripcion" Caption="CuentaDescrip" GroupIndex="0" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Cuenta" GroupIndex="-1" Index="1" />
+        <ColumnInfo Id="Concepto" Index="2" />
+        <ColumnInfo Id="ConceptoTipo" Index="3" />
+        <ColumnInfo Id="Monto" Index="4" />
+        <ColumnInfo Id="FechaAplicacion" Index="5" />
+        <ColumnInfo Id="Status" Index="6" />
+        <ColumnInfo Id="Tipo" Index="7" />
+        <ColumnInfo Id="Moneda" Index="8" />
+        <ColumnInfo Id="FchCan" Index="9" />
+      </Columns>
+      <Filters>
+        <Filter Id="BncsMvmntsCntsSld" Caption="Cuentas con Saldo" Criteria="[Cuenta] Is Null Or [Cuenta.SaldoFinal] &lt;&gt; 0.0m" IsNewNode="True" />
+        <Filter Id="BncsMvmntsTds" Caption="Todas las Cuentas" IsNewNode="True" />
+      </Filters>
+    </ListView>
+  </Views>
+</Application>
