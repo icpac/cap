@@ -2,7 +2,7 @@
 <Application Title="MicroStore" Logo="ICPAC" Company="iCPAC" PreferredLanguage="es-MX">
   <ActionDesign>
     <Actions>
-      <Action Id="SaveAndNew" Shortcut="Control+A" QuickAccess="True" />
+      <Action Id="SaveAndNew" Shortcut="Control+A" QuickAccess="True" ToolTip="Save and New (Ctrl+A)" />
     </Actions>
   </ActionDesign>
   <BOModel></BOModel>
