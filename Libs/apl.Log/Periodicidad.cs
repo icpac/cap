@@ -3,7 +3,7 @@
 {+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++)
 {                                                                   }
 {     Cap control administrativo personal                           }
-{     tlacaelel.icapc@gmail.com                                     }
+{     tlacaelel.icpac@gmail.com                                     }
 {     2014-2020 TIT                                                 }
 {                                                                   }
 {*******************************************************************}
