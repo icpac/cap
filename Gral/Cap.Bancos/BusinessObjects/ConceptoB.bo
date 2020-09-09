@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="Cap.Bancos.BusinessObjects.ConceptoB" IsDesigned="True" DefaultLookupEditorMode="AllItemsWithSearch" />
+  </BOModel>
+  <Views>
+    <DetailView Id="ConceptoB_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Concepto" RelativeSize="100" Index="0">
+              <LayoutItem Id="Clave" SizeConstraintsType="Default" RelativeSize="5.1948051948051948" ViewItem="Clave" />
+              <LayoutItem Id="Descripcion" SizeConstraintsType="Default" RelativeSize="3.8961038961038961" ViewItem="Descripcion" />
+              <LayoutItem Id="Tipo" ViewItem="Tipo" SizeConstraintsType="Default" Index="2" RelativeSize="90.9090909090909" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="ConceptoB" Direction="Horizontal" RelativeSize="86.038961038961034" Removed="True">
+              <LayoutItem Id="Tipo" ViewItem="Tipo" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ConceptoB_ListView">
+      <Columns>
+        <ColumnInfo Id="Clave" Width="88" Index="0" />
+        <ColumnInfo Id="Tipo" SortOrder="Ascending" GroupIndex="0" Width="51" Index="1" />
+        <ColumnInfo Id="Descripcion" Index="2" Width="260" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>
