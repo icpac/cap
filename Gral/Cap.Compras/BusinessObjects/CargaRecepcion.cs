@@ -38,5 +38,8 @@ namespace Cap.Compras.BusinessObjects
 
         [XafDisplayName("Ruta")]
         public string Rt { get; set; }
+
+        [XafDisplayName("Metadata")]
+        public bool Mtdt { get; set; }
     }
 }
