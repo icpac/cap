@@ -80,13 +80,18 @@ namespace Cap.Ventas.BusinessObjects
         [XafDisplayName("Fecha Final")]
         public DateTime FcnFnl { get; set; }
 
+        /*
         [XafDisplayName("Autorización")]
-        public string Atrzcn { get; set; }
+        public string Atrzcn { get; set; }*/
 
         [XafDisplayName("Id Solicitud")]
+        [Appearance("DescargaMasiva.Slctd", Context = "DetailView", Enabled = false,
+            FontStyle = FontStyle.Italic)]
         public string Slctd { get; set; }
 
         private EEstadoSolicitud mEstdSlctd;
+        [Appearance("DescargaMasiva.EstdSlctd", Context = "DetailView", Enabled = false,
+            FontStyle = FontStyle.Italic)]
         [XafDisplayName("Estado Solicitud")]
         public EEstadoSolicitud EstdSlctd 
         { 
@@ -121,6 +126,9 @@ namespace Cap.Ventas.BusinessObjects
                     Emtds = false;
             }
         }
+
+        [XafDisplayName("Metadata")]
+        public bool Mtdt { get; set; }
 
 
         /*
