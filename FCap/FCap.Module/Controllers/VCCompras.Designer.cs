@@ -45,7 +45,7 @@ namespace FCap.Module.Controllers
             // 
             this.popupWindowShowActionLdXml.AcceptButtonCaption = "Cargar Recepciones de XML";
             this.popupWindowShowActionLdXml.CancelButtonCaption = "Cancelar";
-            this.popupWindowShowActionLdXml.Caption = "Cargar Recepciones";
+            this.popupWindowShowActionLdXml.Caption = "Cargar Recepciones de XML";
             this.popupWindowShowActionLdXml.ConfirmationMessage = null;
             this.popupWindowShowActionLdXml.Id = "3d814d63-7c64-4b99-969d-d3a914d3fde1";
             this.popupWindowShowActionLdXml.ToolTip = null;

@@ -80,26 +80,62 @@ namespace FCap.Module.Controllers
             CargaRecepcion obj = e.PopupWindowViewCurrentObject as CargaRecepcion;
 
             Empresa emprs = View.ObjectSpace.FindObject<Empresa>(null);
-            Ventas Prms = objectSpace.FindObject<Ventas>(null);
+            Ventas prms = objectSpace.FindObject<Ventas>(null);
 
             string aux = Path.Combine(obj.Rt, "Extract");
-            string[] dirs = Directory.GetFiles(aux, "*.xml");
+            string[] dirs = Directory.GetFiles(aux, obj.Mtdt ? "*.txt" : "*.xml");
+
             foreach (string dir in dirs)
             {
-                Recepcion rcpcn = objectSpace.CreateObject<Recepcion>();
-                
-                // NegocioAdmin.IniciaDocs(rcpcn);
-                NegocioAdmin.ObtenDelXml(rcpcn, emprs, Prms, dir);
+                if (obj.Mtdt)
+                    NegocioAdmin.CargaMetaData(obj, "recepcion", objectSpace);
+                else
+                    NegocioAdmin.CargaDeArchivo(dir, emprs, prms, obj, objectSpace);
 
                 /*
-                if (View.ObjectSpace.IsNewObject(rcpcn.Proveedor)) 
-                    NegocioAdmin.GrabaProveedor(rcpcn.Proveedor, Prms, false);*/
-                NegocioAdmin.GrabaDocs(rcpcn, Prms);
-                objectSpace.CommitChanges();
+                List<string> dts = NegocioAdmin.GetInfXml(dir);
+                bool addItms;    // Para ver si agrego los items o no
 
-                string auxX = $"{rcpcn.FechaDoc.Year}{rcpcn.FechaDoc.Month:d2}{rcpcn.FechaDoc.Day:d2}{Path.GetFileName(dir)}";
-                NegocioAdmin.Mueve(Path.GetDirectoryName(dir), Path.Combine(obj.Rt, "Recepcion"),
-                    Path.GetFileName(dir), auxX);
+                // Si el xml pertenece al Rfc de la bd
+                if (dts.Count > 2 && dts[2] == emprs.Compania.Rfc)
+                {
+                    // Hay que ver si el uuid está dado de alta ya.
+                    rcpcn = objectSpace.FindObject<Recepcion>
+                        (new BinaryOperator("Uuid", dts[0]));
+
+                    addItms = false;
+                    if (rcpcn == null)
+                    {
+                        addItms = true;
+                        rcpcn = objectSpace.CreateObject<Recepcion>();
+                    }
+
+                    NegocioAdmin.ObtenDelXml(rcpcn, emprs, Prms, dir, addItms);
+                    if (rcpcn.Proveedor != null)
+                    {
+                        if (addItms)
+                            NegocioAdmin.GrabaDocs(rcpcn, Prms);
+                        objectSpace.CommitChanges();
+
+                        try
+                        {
+                            //string auxX = $"{rcpcn.FechaDoc.Year}{rcpcn.FechaDoc.Month:d2}{rcpcn.FechaDoc.Day:d2}{Path.GetFileName(dir)}";
+                            string auxX = Path.Combine(obj.Rt, "Recepcion");
+                            auxX = NegocioAdmin.CreaDirs(auxX, rcpcn.FechaDoc, true, Cap.Generales.Utilerias.ENivelDir.Mes);
+
+
+                            NegocioAdmin.Mueve(Path.GetDirectoryName(dir), / *Path.Combine(obj.Rt, "Recepcion")* /
+                auxX,
+                                Path.GetFileName(dir), Path.GetFileName(dir)/ *auxX* /);
+                        }
+                        catch(Exception ex)
+                        {
+                            Tracing.Tracer.LogText($"Compras: Obten del Xml {ex.Message}");
+                        }
+
+                        rcpcn = null;
+                    }
+                }*/
             }
         }
 
