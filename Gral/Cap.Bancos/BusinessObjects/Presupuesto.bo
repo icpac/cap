@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="Cap.Bancos.BusinessObjects.Presupuesto" IsDesigned="True" />
+  </BOModel>
+  <Views>
+    <DetailView Id="Presupuesto_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="13.122923588039868">
+            <LayoutGroup Id="Presupuesto" RelativeSize="100">
+              <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Presupuesto" IsNewNode="True">
+                <LayoutItem Id="Descripcion" ViewItem="Descripcion" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Total" SizeConstraintsType="Default" RelativeSize="27.272727272727273" Index="2" ViewItem="Total" Removed="True" />
+              <LayoutItem Id="Abonos" SizeConstraintsType="Default" RelativeSize="7.9734219269102988" ViewItem="Abonos" Removed="True" />
+              <LayoutItem Id="Cargos" SizeConstraintsType="Default" RelativeSize="21.818181818181817" ViewItem="Cargos" Removed="True" />
+              <LayoutItem Id="Descripcion" SizeConstraintsType="Default" RelativeSize="29.09090909090909" ViewItem="Descripcion" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Partidas_Group" Direction="Vertical" RelativeSize="86.877076411960132" Caption="Partidas">
+            <LayoutItem Id="Partidas" SizeConstraintsType="Default" RelativeSize="93.469387755102048" ViewItem="Partidas" />
+            <LayoutGroup Id="Autoae55f631-b2f2-48ea-8e0b-0d859aa9cb8b" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="6.5306122448979593" IsNewNode="True">
+              <LayoutItem Id="Total" ViewItem="Total" SizeConstraintsType="Default" Index="0" RelativeSize="49.845201238390096" IsNewNode="True" />
+              <LayoutItem Id="Item1" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="50.154798761609904" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
