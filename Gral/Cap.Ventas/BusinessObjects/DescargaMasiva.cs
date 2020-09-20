@@ -72,22 +72,45 @@ namespace Cap.Ventas.BusinessObjects
         [XafDisplayName("RFC Receptor")]
         public string RfcRcptr { get; set; }
 
+        private DateTime mFechaIni;
         [ModelDefault("DisplayFormat", "{0:dd MMM yyyy}")]
         [XafDisplayName("Fecha Inicial")]
-        public DateTime FchIncl { get; set; }
+        public DateTime FchIncl 
+        { 
+            get { return mFechaIni; }
+            set { SetPropertyValue("FchIncl", ref mFechaIni, value); } 
+        }
 
+        private DateTime mFechaFin;
         [ModelDefault("DisplayFormat", "{0:dd MMM yyyy}")]
         [XafDisplayName("Fecha Final")]
-        public DateTime FcnFnl { get; set; }
+        public DateTime FcnFnl 
+        { 
+            get { return mFechaFin; }
+            set { SetPropertyValue("FcnFnl", ref mFechaFin, value); } 
+        }
 
-        /*
-        [XafDisplayName("Autorización")]
-        public string Atrzcn { get; set; }*/
+        private EFechas mPeriodo;
+        [ImmediatePostData]
+        public EFechas Periodo
+        {
+            get { return mPeriodo; }
+            set
+            {
+                mPeriodo = value;
+                Fechas.CalculaFechas(value.GetHashCode() + 1, ref mFechaIni, ref mFechaFin);
+            }
+        }
 
+        private string mSlctd;
         [XafDisplayName("Id Solicitud")]
         [Appearance("DescargaMasiva.Slctd", Context = "DetailView", Enabled = false,
             FontStyle = FontStyle.Italic)]
-        public string Slctd { get; set; }
+        public string Slctd 
+        { 
+            get { return mSlctd; }
+            set { SetPropertyValue("Slctd", ref mSlctd, value); }
+        }
 
         private EEstadoSolicitud mEstdSlctd;
         [Appearance("DescargaMasiva.EstdSlctd", Context = "DetailView", Enabled = false,
@@ -130,7 +153,8 @@ namespace Cap.Ventas.BusinessObjects
         [XafDisplayName("Metadata")]
         public bool Mtdt { get; set; }
 
-
+        [XafDisplayName("Sólo Descarga Archivos")]
+        public bool SlDscrgr { get; set; }
         /*
         private MyFileData mRtDscrg;
         [DevExpress.Xpo.DisplayName("Ruta Descarga")]
