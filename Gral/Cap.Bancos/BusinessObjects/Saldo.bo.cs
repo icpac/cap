@@ -17,7 +17,6 @@ namespace Cap.Bancos.BusinessObjects
 {
     public partial class Saldo
     {
-        //#region Public Properties
         // Con esto se cayo el crear la tabla
         //[Association("Bancaria-Saldos")]
         [Indexed("Cuenta; Periodo", Unique = true)]
@@ -28,10 +27,9 @@ namespace Cap.Bancos.BusinessObjects
             set { SetPropertyValue("Cuenta", ref FCuenta, value); }
         }
 
-        //#region + Periodo
         // Por qué le pusí NonP... ? Dic 2019 
-        [NonPersistent]
-        public string periodo;
+        // [NonPersistent]
+        private string periodo;
         [Size(6)]
         public string Periodo
         {
@@ -44,19 +42,14 @@ namespace Cap.Bancos.BusinessObjects
                     SetPropertyValue("Periodo", ref periodo, value);
             }
         }
-        //#endregion
 
-        //#region + Monto
         private decimal saldo;
         public decimal Monto
         {
             get { return saldo; }
             set { SetPropertyValue("Monto", ref saldo, value); }
         }
-        //#endregion
-        //#endregion
 
-        //#region + After construction
         public override void AfterConstruction()
         {
             base.AfterConstruction();
