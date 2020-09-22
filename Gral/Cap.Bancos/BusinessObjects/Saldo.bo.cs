@@ -27,8 +27,6 @@ namespace Cap.Bancos.BusinessObjects
             set { SetPropertyValue("Cuenta", ref FCuenta, value); }
         }
 
-        // Por qué le pusí NonP... ? Dic 2019 
-        // [NonPersistent]
         private string periodo;
         [Size(6)]
         public string Periodo
