@@ -12,17 +12,11 @@
 #endregion
 
 using System;
-using System.Linq;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Actions;
 using Cap.Bancos.BusinessObjects;
 using Cap.Bancos.Utilerias;
-using DevExpress.Persistent.BaseImpl;
-using DevExpress.ExpressApp.Xpo;
-using DevExpress.ExpressApp.Reports;
-using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
-using System.Collections;
 using DevExpress.ExpressApp.Model;
 
 namespace Cap.Bancos.Controllers
@@ -96,14 +90,6 @@ namespace Cap.Bancos.Controllers
         // Dic 2019, No sé si será necesario un reporte de cuentas !
         private void simpleActionReprtCunts_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
-            /*Obsolete
-            string nameR = "Cuentas";
-
-            ReportData donneesEtat = (from reportData in new XPQuery<ReportData>(((XPObjectSpace)View.ObjectSpace).Session)
-                                      where reportData.ReportName == nameR
-                                      select reportData).FirstOrDefault();
-
-            Frame.GetController<ReportServiceController>().ShowPreview(donneesEtat, null);*/
         }
 
         private void popupWindowShowActionTrnsfrr_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e)
@@ -148,53 +134,21 @@ namespace Cap.Bancos.Controllers
 
         private void popupWindowShowActionAddMov_Execute(object sender, PopupWindowShowActionExecuteEventArgs e)
         {
-            /* Ya lo hace el view de movimientoB
-            MovimientoB obj = e.PopupWindowViewCurrentObject as MovimientoB;
-
-            if (View != null)
-            {
-                NegocioBancos.GrabaMovimiento(obj);
-                View.ObjectSpace.CommitChanges();
-                
-                View.Refresh();
-            }*/
         }
 
         private void popupWindowShowActionMovsCta_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e)
         {
-            /*
-            
-            MovimientoB newObj = objectSpace.CreateObject<MovimientoB>();
-
-            if (View != null && View.CurrentObject != null)
-            {
-                Bancaria bc = View.CurrentObject as Bancaria;
-                newObj.Cuenta = objectSpace.FindObject<Bancaria>
-                    (new BinaryOperator("Oid", bc.Oid));
-            }*/
-            // e.View = Application.CreateDetailView(objectSpace, "MovimientoB_DetailView", true, newObj);
             Bancaria obj = View.CurrentObject as Bancaria;
-
 
             Type objectType = typeof(MovimientoB);
             IObjectSpace objectSpace = Application.CreateObjectSpace();
-            string listViewId = Application.FindListViewId /*.FindLookupListViewId*/(objectType);
+            string listViewId = Application.FindListViewId(objectType);
             IModelListView modelListView = (IModelListView)Application.FindModelView(listViewId);
             CollectionSourceBase collectionSource = Application.CreateCollectionSource(
                 objectSpace, objectType, listViewId);
 
             collectionSource.SetCriteria("Cuenta", $"Cuenta.Oid = '{obj.Oid}'");
             e.View = Application.CreateListView(modelListView, collectionSource, true);
-
-            /*
-            Bancaria obj = e.View.CurrentObject as Bancaria;
-            
-            GroupOperator fil = new GroupOperator();
-
-            CollectionSourceBase
-            fil.Operands.Add(new BinaryOperator("Cuenta", obj));
-            IList col = objectSpace.CreateCollection(typeof(MovimientoB), fil);
-            e.View = Application.CreateListView("MovimientoB_ListView", col, true);*/
         }
     }
 }
