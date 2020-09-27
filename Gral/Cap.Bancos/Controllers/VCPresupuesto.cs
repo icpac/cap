@@ -1,7 +1,6 @@
 using System;
 using DevExpress.ExpressApp;
 using Cap.Bancos.BusinessObjects;
-using DevExpress.Xpo.Metadata;
 using System.Collections;
 using System.Collections.Generic;
 using DevExpress.Data.Filtering;
@@ -72,10 +71,9 @@ namespace Cap.Bancos.Controllers
             if (obj != null)
             {
                 IObjectSpace objectSpace = Application.CreateObjectSpace();
-                List<MovimientoB> lista; // = new List<MovimientoB>();
+                List<MovimientoB> lista;
                 GroupOperator fil = new GroupOperator();
-                Presupuesto prsu = // Diferente session e.CurrentObject as Presupuesto;
-                    objectSpace.FindObject<Presupuesto>(null);
+                Presupuesto prsu = objectSpace.FindObject<Presupuesto>(null);
 
                 if (prsu != null)
                 {
