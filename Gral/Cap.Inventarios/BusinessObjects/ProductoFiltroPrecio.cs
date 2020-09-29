@@ -4,9 +4,17 @@ using DevExpress.Persistent.Base;
 using DevExpress.ExpressApp.Model;
 using Cap.Generales.BusinessObjects.Object;
 using Cap.Generales.BusinessObjects.General;
+using DevExpress.ExpressApp.ConditionalAppearance;
+using System.Drawing;
 
 namespace Cap.Inventarios.BusinessObjects
 {
+    [Appearance("ProductoFiltroPrecio.InputFile", Context = "DetailView",
+        Enabled = false, FontStyle = FontStyle.Italic, Criteria = "InputFile == null",
+        TargetItems = "PscnClv, PscnDscrpcn, PscnPrcP")]
+    [Appearance("ProductoFiltroPrecio._InputFile", Context = "DetailView",
+        Enabled = false, FontStyle = FontStyle.Italic, Criteria = "InputFile != null",
+        TargetItems = "PrcntjIncrmnt, Mrc")]
     //[DefaultClassOptions]
     //[ImageName("BO_Contact")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
@@ -58,5 +66,14 @@ namespace Cap.Inventarios.BusinessObjects
         public Marca Mrc
         { get; set; }
 
+
+        [XafDisplayName("Clave")]
+        public string PscnClv { get; set; }
+        
+        [XafDisplayName("Descripción")]
+        public string PscnDscrpcn { get; set; }
+
+        [XafDisplayName("Precio P.")]
+        public string PscnPrcP { get; set; }
     }
 }
