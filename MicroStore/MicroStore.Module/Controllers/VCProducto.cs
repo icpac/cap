@@ -69,7 +69,10 @@ namespace MicroStore.Module.Controllers
         private void popupWindowShowActionActPrecs_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e)
         {
             IObjectSpace objectSpace = Application.CreateObjectSpace();
-            ProductoFiltroPrecio fil = objectSpace.CreateObject<ProductoFiltroPrecio>();
+            ProductoFiltroPrecio fil = objectSpace.FindObject<ProductoFiltroPrecio>(null);
+
+            if (fil == null)                
+                fil = objectSpace.CreateObject<ProductoFiltroPrecio>();
 
             e.View = Application.CreateDetailView(objectSpace, "ProductoFiltroPrecio_DetailView", true, fil);
         }
