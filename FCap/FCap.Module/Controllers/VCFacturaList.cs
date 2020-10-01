@@ -20,10 +20,7 @@ namespace FCap.Module.Controllers
     using Cap.Ventas.BusinessObjects;
     using Cap.Compras.BusinessObjects;
     using DevExpress.Persistent.Base;
-    using DevExpress.Skins;
-    using System.Collections.Generic;
     using sw.descargamasiva;
-    using jc;
     using System.IO.Compression;
 
     // For more information on Controllers and their life cycle, check out the http://documentation.devexpress.com/#Xaf/CustomDocument2621 and http://documentation.devexpress.com/#Xaf/CustomDocument3118 help articles.
@@ -93,11 +90,6 @@ namespace FCap.Module.Controllers
                     sortProperty.PropertyName = propertyName;
                 }
             }
-            /*
-            if (!((Employee)SecuritySystem.CurrentUser).IsAdministrator)
-            {
-                lv.CollectionSource.Criteria["AssignedTo"] = CriteriaOperator.Parse("AssignedTo.Oid = ?", SecuritySystem.CurrentUserId);
-            }*/
 
             UpdateAction();
 
@@ -105,10 +97,6 @@ namespace FCap.Module.Controllers
             bool puede = SecuritySystem.CurrentUserName == "root";
             simpleActionRprtCntbl.Enabled.SetItemValue("SecurityAllowance", puede);
             simpleActionRprtCntbl.Active.SetItemValue("Visible", puede);
-            /*
-            puede = false;
-            simpleActionGetXml.Enabled.SetItemValue("SecurityAllowance", puede);
-            simpleActionGetXml.Active.SetItemValue("Visible", puede);*/
         }
 
         // Override to access the controls of a View for which the current Controller is intended.
@@ -321,18 +309,12 @@ namespace FCap.Module.Controllers
                                     if (se.Value == fac.Uuid)
                                     {
                                         string aux;
-                                        /*
-                                        string aux = Directory.GetCurrentDirectory();
-                                        aux = Path.Combine(aux, "Pdfs");*/
                                         aux = Path.Combine(vta.VntCfdi.RutaPdfVnts, fac.Tipo.ToString());
                                         aux = NegocioAdmin.CreaDirs(aux, fac.FechaDoc);
 
                                         aux = Path.Combine(aux, Path.GetFileName(file));
-                                        // string.Format("{0}-{1}.xml", it.ReciboN, it.Uuid));
                                         File.Move(file, aux);
 
-                                        // CreaPdfImprime(false, true, objectSpace);
-                                        // NegocioNom.ImprFto("ReciboItem", false, true, NegocioNom.NamePdf(it), it, objectSpace);
                                         fac.Concilia = true;
                                     }
                                 }
@@ -361,9 +343,7 @@ namespace FCap.Module.Controllers
 
         private bool Licencia()
         {
-            Empresa emp = View.ObjectSpace.FindObject<Empresa>(null);
-            var flg = PasswordCryptographer.VerifyHashedPasswordDelegate(emp.Contra, emp.Compania.Rfc);
-            return flg;
+            return true;
         }
 
         private void simpleActionRprtCntbl_Execute(object sender, DevExpress.ExpressApp.Actions.SimpleActionExecuteEventArgs e)
@@ -382,7 +362,6 @@ namespace FCap.Module.Controllers
                     (emp.Regimenes != null && emp.Regimenes.Count > 0)
                     ? (emp.Regimenes[0] as RegimenEmpresa).Rgmn.Dscrpcn
                     : string.Empty;
-                    // emp.Regimen; TIT Sep 2018
 
                 int ano = DateTime.Today.Month == 1 ? DateTime.Today.Year - 1 : DateTime.Today.Year;
 
@@ -466,12 +445,6 @@ namespace FCap.Module.Controllers
 
                 sheet.Cells["c4"].Value = string.Format("INGRESOS{0}(Cobrados por sus{0}ventas o servicios){0}Sin incluir IVA",
                     Environment.NewLine);
-
-                /*
-                sheet.Cells["c4"].Alignment.Vertical = SpreadsheetVerticalAlignment.Justify;
-                sheet.Cells["c4"].Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center;
-                sheet.Cells["c4"].Alignment.ShrinkToFit = true;
-                sheet.Cells["c4"].Alignment.WrapText = true;*/
 
                 sheet.Columns[2].Width = 350;
                 sheet.Columns[3].Width = 340;
@@ -623,7 +596,6 @@ namespace FCap.Module.Controllers
                     if (mesini > 1)
                     {
                         sheet.Rows[i].FillColor = Color.FromName("BurlyWood");
-                        //Beige"); // AntiqueWhite"); Bisque BlanchedAlmond
 
                         if (totAcm[mesini - 1] != 0)
                         {
@@ -650,257 +622,6 @@ namespace FCap.Module.Controllers
                 
                 book.SaveDocument(string.Format("Contable.xls"));
             }
-
-            /*
-            Workbook book = new Workbook();
-            var sheet = book.Worksheets.ActiveWorksheet;
-            sheet.Cells[0, 0].Value = "Carlos Javier Lopez Cruz";
-            sheet.Cells[1, 0].Value = "LOCC670416JI8";
-            // sheet.Cells[1, 1].Value = "litros67";
-            int ano = DateTime.Today.Month == 1 ? DateTime.Today.Year-1 : DateTime.Today.Year;
-                // DateTime.Today.Year;
-
-            sheet.Cells["A4"].Value = string.Format("Determinación del ISR provisional del Ejercicio {0}.", 
-                ano);
-
-            sheet.Cells[5, 1].Value = "ENERO";
-            sheet.Cells[5, 4].Value = "FEBRERO";
-            sheet.Cells[5, 7].Value = "MARZO";
-            sheet.Cells[5, 10].Value = "ABRIL";
-            sheet.Cells[5, 13].Value = "MAYO";
-            sheet.Cells[5, 16].Value = "JUNIO";
-            sheet.Cells[5, 19].Value = "JULIO";
-            sheet.Cells[5, 22].Value = "AGOSTO";
-            sheet.Cells[5, 25].Value = "SEPTIEMBRE";
-            sheet.Cells[5, 28].Value = "OCTUBRE";
-            sheet.Cells[5, 31].Value = "NOVIEMBRE";
-            sheet.Cells[5, 34].Value = "DICIEMBRE";
-
-
-            XPObjectSpace objectSpace = (XPObjectSpace)View.ObjectSpace;
-            Empresa emp = objectSpace.FindObject<Empresa>(null);
-
-            CriteriaOperator[] operands = new CriteriaOperator[2];
-            decimal[] total = new decimal[12];
-            decimal[] totAcm = new decimal[12];
-            decimal[] compr = new decimal[12];
-            decimal[] reten = new decimal[12];
-            decimal[] retAcm = new decimal[12];
-            decimal[] ivaTras = new decimal[12];
-            decimal[] ivaRet = new decimal[12];
-            decimal[] ivaAcr = new decimal[12];
-
-            operands[1] = new BinaryOperator("Status", DocumentoStatus.Cancelado, BinaryOperatorType.NotEqual);
-
-            sheet.Cells["A1"].Value = emp.Compania.Nombre;
-            sheet.Cells["B1"].Value = emp.Compania.Rfc;
-
-            for (int mesini = 1; mesini < 13; mesini++)
-            {
-                DateTime mFechaIni = Fecha.FechaInicial(mesini, ano);
-                DateTime mFechaFin = Fecha.FechaFinal(mesini, ano);
-
-                operands[0] = GroupOperator.And(new BinaryOperator("FechaDoc", mFechaIni, BinaryOperatorType.GreaterOrEqual),
-                    new BinaryOperator("FechaDoc", mFechaFin, BinaryOperatorType.LessOrEqual));
-
-                IList arr = objectSpace.CreateCollection(typeof(DocumentoSalida), new GroupOperator(operands), null);
-
-                total[mesini - 1] = 0;
-                totAcm[mesini - 1] = 0;
-                reten[mesini - 1] = 0;
-                retAcm[mesini - 1] = 0;
-                ivaTras[mesini - 1] = 0;
-                ivaRet[mesini - 1] = 0;
-                ivaAcr[mesini - 1] = 0;
-                if (arr.Count > 0)
-                {
-                    foreach (DocumentoSalida doc in arr)
-                    {
-                        total[mesini - 1] += doc.SubTotal;
-                        reten[mesini - 1] += doc.RetenISR;
-                        ivaTras[mesini - 1] += doc.Impuesto04;
-                        ivaRet[mesini - 1] += doc.RetenIVA;
-                    }
-
-                    if ((mesini - 1) > 0)
-                    {
-                        totAcm[mesini - 1] += totAcm[mesini - 2] + total[mesini - 2];
-                        retAcm[mesini - 1] += retAcm[mesini - 2] + reten[mesini - 2];
-                    }
-                }
-            }
-
-            sheet.Cells[6, 0].ColumnWidth = 470;
-            sheet.Cells["A7"].Value = "Ingresos Acumulados:";
-            sheet.Cells[6, 1].Value = 0;
-            sheet.Cells[6, 4].Value = total[0].ToString("n2");
-            sheet.Cells[6, 7].Value = (total[0] + total[1]).ToString("n2");
-            sheet.Cells[6, 10].Value = (total[0] + total[1] + total[2]).ToString("n2");
-            sheet.Cells[6, 13].Value = (total[0] + total[1] + total[2]
-                 + total[3]).ToString("n2");
-            sheet.Cells[6, 16].Value = (total[0] + total[1] + total[2]
-                 + total[3] + total[4]).ToString("n2");
-            sheet.Cells[6, 19].Value = (total[0] + total[1] + total[2]
-                 + total[3] + total[4] + total[5]).ToString("n2");
-            sheet.Cells[6, 22].Value = (total[0] + total[1] + total[2]
-                 + total[3] + total[4] + total[5] + total[6]).ToString("n2");
-            sheet.Cells[6, 25].Value = (total[0] + total[1] + total[2]
-                 + total[3] + total[4] + total[5] + total[6] + total[7]).ToString("n2");
-            sheet.Cells[6, 28].Value = (total[0] + total[1] + total[2]
-                 + total[3] + total[4] + total[5] + total[6] + total[7]
-                  + total[8]).ToString("n2");
-            sheet.Cells[6, 31].Value = (total[0] + total[1] + total[2]
-                 + total[3] + total[4] + total[5] + total[6] + total[7]
-                  + total[8] + total[9]).ToString("n2");
-            sheet.Cells[6, 34].Value = (total[0] + total[1] + total[2]
-                 + total[3] + total[4] + total[5] + total[6] + total[7]
-                  + total[8] + total[9] + total[10]).ToString("n2");
-
-            sheet.Cells["A8"].Value = "Ingresos:";
-            sheet.Cells[7, 1].Value = total[0].ToString("n2");
-            sheet.Cells[7, 4].Value = total[1].ToString("n2");
-            sheet.Cells[7, 7].Value = total[2].ToString("n2");
-            sheet.Cells[7, 10].Value = total[3].ToString("n2");
-            sheet.Cells[7, 13].Value = total[4].ToString("n2");
-            sheet.Cells[7, 16].Value = total[5].ToString("n2");
-            sheet.Cells[7, 19].Value = total[6].ToString("n2");
-            sheet.Cells[7, 22].Value = total[7].ToString("n2");
-            sheet.Cells[7, 25].Value = total[8].ToString("n2");
-            sheet.Cells[7, 28].Value = total[9].ToString("n2");
-            sheet.Cells[7, 31].Value = total[10].ToString("n2");
-            sheet.Cells[7, 34].Value = total[11].ToString("n2");
-
-            sheet.Cells["A9"].Value = "Total de Ingresos:";
-            sheet.Cells[8, 2].Value = (total[0] + totAcm[0]).ToString("n2");
-            sheet.Cells[8, 5].Value = (total[1] + totAcm[1]).ToString("n2");
-            sheet.Cells[8, 8].Value = (total[2] + totAcm[2]).ToString("n2");
-            sheet.Cells[8, 11].Value = (total[3] + totAcm[3]).ToString("n2");
-            sheet.Cells[8, 14].Value = (total[4] + totAcm[4]).ToString("n2");
-            sheet.Cells[8, 17].Value = (total[5] + totAcm[5]).ToString("n2");
-            sheet.Cells[8, 20].Value = (total[6] + totAcm[6]).ToString("n2");
-            sheet.Cells[8, 23].Value = (total[7] + totAcm[7]).ToString("n2");
-            sheet.Cells[8, 26].Value = (total[8] + totAcm[8]).ToString("n2");
-            sheet.Cells[8, 29].Value = (total[9] + totAcm[9]).ToString("n2");
-            sheet.Cells[8, 32].Value = (total[10] + totAcm[10]).ToString("n2");
-            sheet.Cells[8, 35].Value = (total[11] + totAcm[11]).ToString("n2");
-
-
-
-            decimal[] totalDdc = new decimal[12];
-            decimal[] totAcmDdc = new decimal[12];
-            for (int mesini = 1; mesini < 13; mesini++)
-            {
-                DateTime mFechaIni = Fecha.FechaInicial(mesini, ano);
-                DateTime mFechaFin = Fecha.FechaFinal(mesini, ano);
-
-                operands[0] = GroupOperator.And(new BinaryOperator("FechaDoc", mFechaIni, BinaryOperatorType.GreaterOrEqual),
-                    new BinaryOperator("FechaDoc", mFechaFin, BinaryOperatorType.LessOrEqual));
-
-                IList arr = objectSpace.CreateCollection(typeof(Recepcion), new GroupOperator(operands), null);
-
-                totalDdc[mesini - 1] = 0;
-                totAcmDdc[mesini - 1] = 0;
-                ivaAcr[mesini - 1] = 0;
-                if (arr.Count > 0)
-                {
-                    foreach (Recepcion doc in arr)
-                    {
-                        totalDdc[mesini - 1] += doc.SubTotal;
-                        ivaAcr[mesini - 1] += doc.Impuesto04;
-                    }
-
-                    if ((mesini - 1) > 0)
-                        totAcmDdc[mesini - 1] += totAcmDdc[mesini - 2] + totalDdc[mesini - 2];
-                }
-            }
-
-            sheet.Cells[9, 0].Value = "Deducciones Acumuladas:";
-            sheet.Cells[9, 1].Value = totAcmDdc[0].ToString("n2");
-            sheet.Cells[9, 4].Value = totAcmDdc[1].ToString("n2");
-            sheet.Cells[9, 7].Value = totAcmDdc[2].ToString("n2");
-            sheet.Cells[9, 10].Value = totAcmDdc[3].ToString("n2");
-            sheet.Cells[9, 13].Value = totAcmDdc[4].ToString("n2");
-            sheet.Cells[9, 16].Value = totAcmDdc[5].ToString("n2");
-            sheet.Cells[9, 19].Value = totAcmDdc[6].ToString("n2");
-            sheet.Cells[9, 22].Value = totAcmDdc[7].ToString("n2");
-            sheet.Cells[9, 25].Value = totAcmDdc[8].ToString("n2");
-            sheet.Cells[9, 28].Value = totAcmDdc[9].ToString("n2");
-            sheet.Cells[9, 31].Value = totAcmDdc[10].ToString("n2");
-            sheet.Cells[9, 34].Value = totAcmDdc[11].ToString("n2");
-
-            int ren = 10;
-            sheet.Cells[ren, 0].Value = "Deducciones:";
-            for (int i = 0; i < 12; i++)
-                sheet.Cells[ren, 1+3*i].Value = totalDdc[i].ToString("n2");
-
-            ren = 11;
-            sheet.Cells[ren, 0].Value = "Total de Deducciones:";
-            for (int i = 0; i < 12; i++)
-                sheet.Cells[ren, 2+3*i].Value = (totalDdc[i] + totAcmDdc[i]).ToString("n2");
-
-            ren++;
-            sheet.Cells[++ren, 0].Value = "Base ISR:";
-            for (int i = 0; i < 12; i++)
-            {
-                sheet[ren, 2+3*i].Value = (total[i] + totAcm[i]- (totalDdc[i] + totAcmDdc[i])) > 0
-                    ? (total[i] + totAcm[i] - (totalDdc[i] + totAcmDdc[i])).ToString("n2") : "-";
-            }    
-
-            sheet.Cells[++ren, 0].Value = "Límite Inferior:";
-            sheet.Cells[++ren, 0].Value = "Excedente L.I.:";
-            sheet.Cells[++ren, 0].Value = "% Marginal:";
-            sheet.Cells[++ren, 0].Value = "Impuesto Marginal:";
-            sheet.Cells[++ren, 0].Value = "Cuotra fija:";
-            sheet.Cells[++ren, 0].Value = "ISR Causado:";
-
-            ren++;
-            ren++;
-            sheet.Cells[ren, 0].Value = "Retenciones Acumuladas:";
-            for (int i = 0; i < 12; i++)
-                sheet.Cells[ren, 1+3*i].Value = retAcm[i].ToString("n2");
-
-            ren++;
-            sheet.Cells[ren, 0].Value = "Retención ISR:";
-            for (int i = 0; i < 12; i++)
-                sheet.Cells[ren, 1 + 3 * i].Value = reten[i].ToString("n2");
-
-            ren++;
-            sheet.Cells[ren, 0].Value = "Total de Retenciones:";
-            for (int i = 0; i < 12; i++)
-                sheet.Cells[ren, 2 + 3 * i].Value = (reten[i] + retAcm[i]).ToString("n2");
-
-            ren++;
-            sheet.Cells[++ren, 0].Value = "Determinacion del Impuesto al Valor Agregado Mensual del Ejercicio 2014";
-
-            ren++;
-            ren++;
-            sheet.Cells[ren, 0].Value = "IVA trasladado:";
-            for (int i = 0; i < 12; i++)
-                sheet.Cells[ren, 1 + 3 * i].Value = ivaTras[i].ToString("n2");
-
-            ren++;
-            sheet.Cells[ren, 0].Value = "Retención IVA:";
-            for (int i = 0; i < 12; i++)
-                sheet.Cells[ren, 1 + 3 * i].Value = ivaRet[i].ToString("n2");
-
-            ren++;
-            sheet.Cells[ren, 0].Value = "IVA Acreditable:";
-            for (int i = 0; i < 12; i++)
-                sheet.Cells[ren, 1 + 3 * i].Value = ivaAcr[i].ToString("n2");
-
-            ren++;
-            sheet.Cells[ren, 0].Value = "Saldo a favor de IVA:";
-            for (int i = 0; i < 12; i++)
-                sheet.Cells[ren, 1 + 3 * i].Value =  ivaTras[i] - ivaRet[i]-ivaAcr[i] > 0 ? "0" :
-                    Math.Round(ivaAcr[i] + ivaRet[i] - ivaTras[i]).ToString("n2");
-
-            ren++;
-            sheet.Cells[ren, 0].Value = "Saldo a pagar de IVA:";
-            for (int i = 0; i < 12; i++)
-                sheet.Cells[ren, 1 + 3 * i].Value = ivaTras[i] - ivaRet[i] - ivaAcr[i] > 0 ? 
-                    Math.Round(ivaTras[i] - ivaRet[i] - ivaAcr[i]).ToString("n2") : "0";
-
-            book.SaveDocument(string.Format("Contable.xls"));*/
         }
 
         private void popupWindowShowActionGetXml_CustomizePopupWindowParams(object sender, DevExpress.ExpressApp.Actions.CustomizePopupWindowParamsEventArgs e)
@@ -924,23 +645,7 @@ namespace FCap.Module.Controllers
         private void popupWindowShowActionGetXml_Execute(object sender, DevExpress.ExpressApp.Actions.PopupWindowShowActionExecuteEventArgs e)
         {
             CargaRecepcion obj = e.PopupWindowViewCurrentObject as CargaRecepcion;
-            /*
-            IObjectSpace objectSpace = Application.CreateObjectSpace();
-            CargaRecepcion obj = e.PopupWindowViewCurrentObject as CargaRecepcion;
 
-            Empresa emprs = objectSpace.FindObject<Empresa>(null);
-            Ventas vts = objectSpace.FindObject<Ventas>(null);
-
-            string aux = Path.Combine(obj.Rt, "Extract");
-            string[] dirs = Directory.GetFiles(aux, obj.Mtdt ? "*.txt" : "*.xml");
-
-            foreach (string dir in dirs)
-            {
-                if (obj.Mtdt)
-                    NegocioAdmin.CargaMetaData(obj, dir, objectSpace, "factura");
-                else
-                    NegocioAdmin.CargaDeArchivo(dir, emprs, vts, obj, objectSpace);
-            }*/
             CrgDeXml(obj);
         }
 
@@ -958,8 +663,6 @@ namespace FCap.Module.Controllers
             }
         }
 
-        /*
-        private string key = "d12573bh";*/
         private void popupWindowShowActionDscrgMsv_CustomizePopupWindowParams(object sender, DevExpress.ExpressApp.Actions.CustomizePopupWindowParamsEventArgs e)
         {
             IObjectSpace objectSpace = Application.CreateObjectSpace();
@@ -974,20 +677,9 @@ namespace FCap.Module.Controllers
             newObj.RfcRcptr = mEmpresa.Compania.Rfc;
             newObj.RtDscrg = Prms.RutaPdfVnts;
 
-            /*
-            string rfcaux = new SymmCrypto(SymmCrypto.SymmProvEnum.DES).
-                Decrypting(string.IsNullOrEmpty(mEmpresa.Contra) ? "LICENCIA" : mEmpresa.Contra, key);
-            string[] toks = rfcaux.Split('|');
-
-            if (toks[0] != mEmpresa.Compania.Rfc)
-            {
-                newObj.RfcEmsr =
-                newObj.RfcRcptr = "AAA010101AAA";
-            }*/
             e.View = Application.CreateDetailView(objectSpace, "DescargaMasiva_DetailView", true, newObj);
         }
 
-        // https://docs.microsoft.com/en-us/dotnet/api/system.io.compression.zipfile.extracttodirectory?view=netframework-4.8
         private void popupWindowShowActionDscrgMsv_Execute(object sender, DevExpress.ExpressApp.Actions.PopupWindowShowActionExecuteEventArgs e)
         {
             DescargaMasiva obj = e.PopupWindowViewCurrentObject as DescargaMasiva;
@@ -1050,7 +742,6 @@ namespace FCap.Module.Controllers
         private void CrgDeXml(CargaRecepcion obj)
         {
             IObjectSpace objectSpace = Application.CreateObjectSpace();
-            // CargaRecepcion obj = e.PopupWindowViewCurrentObject as CargaRecepcion;
 
             Empresa emprs = objectSpace.FindObject<Empresa>(null);
             Ventas vts = objectSpace.FindObject<Ventas>(null);
