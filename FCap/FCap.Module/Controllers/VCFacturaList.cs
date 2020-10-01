@@ -15,11 +15,16 @@ namespace FCap.Module.Controllers
     using System.IO;
     using FCap.Module.Utilerias;
     using DevExpress.Spreadsheet;
-    //using FCap.Module.BusinessObjects.Compras;
     using Cap.Generales.BusinessObjects.Empresa;
     using System.Drawing;
     using Cap.Ventas.BusinessObjects;
     using Cap.Compras.BusinessObjects;
+    using DevExpress.Persistent.Base;
+    using DevExpress.Skins;
+    using System.Collections.Generic;
+    using sw.descargamasiva;
+    using jc;
+    using System.IO.Compression;
 
     // For more information on Controllers and their life cycle, check out the http://documentation.devexpress.com/#Xaf/CustomDocument2621 and http://documentation.devexpress.com/#Xaf/CustomDocument3118 help articles.
     public partial class VCFacturaList : ViewController
@@ -47,6 +52,9 @@ namespace FCap.Module.Controllers
 
             simpleActionRprtCntbl.TargetObjectType = typeof(DocumentoSalida);
             simpleActionRprtCntbl.TargetViewType = ViewType.ListView;
+
+            popupWindowShowActionDscrgMsva.TargetObjectType = typeof(DocumentoSalida);
+            popupWindowShowActionDscrgMsva.TargetViewType = ViewType.ListView;
         }
 
         // Override to do something before Controllers are activated within the current Frame (their View property is not yet assigned).
@@ -338,8 +346,6 @@ namespace FCap.Module.Controllers
 
         private void simpleActionGetXml_Execute(object sender, DevExpress.ExpressApp.Actions.SimpleActionExecuteEventArgs e)
         {
-            /*
-            NegocioAdmin.ObtenXmlsVnts(View.ObjectSpace);*/
         }
 
         private void UpdateAction()
@@ -349,6 +355,15 @@ namespace FCap.Module.Controllers
             this.simpleActionGetXml.Enabled.SetItemValue("SecurityAllowance", puede);
             if (!puede)
                 simpleActionGetXml.Active.SetItemValue("Visible", false);
+
+            popupWindowShowActionDscrgMsva.Active.SetItemValue("Visible", Licencia());
+        }
+
+        private bool Licencia()
+        {
+            Empresa emp = View.ObjectSpace.FindObject<Empresa>(null);
+            var flg = PasswordCryptographer.VerifyHashedPasswordDelegate(emp.Contra, emp.Compania.Rfc);
+            return flg;
         }
 
         private void simpleActionRprtCntbl_Execute(object sender, DevExpress.ExpressApp.Actions.SimpleActionExecuteEventArgs e)
@@ -903,30 +918,30 @@ namespace FCap.Module.Controllers
             newObj.Rt = Prms.RutaPdfVnts;
 
             e.View = Application.CreateDetailView(objectSpace, "CargaRecepcion_DetailView", true, newObj);
+            e.View.Caption = "Cargar Facturas";
         }
 
         private void popupWindowShowActionGetXml_Execute(object sender, DevExpress.ExpressApp.Actions.PopupWindowShowActionExecuteEventArgs e)
         {
+            CargaRecepcion obj = e.PopupWindowViewCurrentObject as CargaRecepcion;
+            /*
             IObjectSpace objectSpace = Application.CreateObjectSpace();
             CargaRecepcion obj = e.PopupWindowViewCurrentObject as CargaRecepcion;
 
-            Empresa emprs = View.ObjectSpace.FindObject<Empresa>(null);
-            Ventas Prms = objectSpace.FindObject<Ventas>(null);
+            Empresa emprs = objectSpace.FindObject<Empresa>(null);
+            Ventas vts = objectSpace.FindObject<Ventas>(null);
 
             string aux = Path.Combine(obj.Rt, "Extract");
-            string[] dirs = Directory.GetFiles(aux, "*.xml");
+            string[] dirs = Directory.GetFiles(aux, obj.Mtdt ? "*.txt" : "*.xml");
+
             foreach (string dir in dirs)
             {
-                DocumentoSalida rcpcn = objectSpace.CreateObject<DocumentoSalida>();
-
-                NegocioAdmin.ObtenXmlsVnts(rcpcn, emprs, Prms, dir);
-                NegocioAdmin.GrabaDocumento(rcpcn, Prms, false);
-                objectSpace.CommitChanges();
-
-                string auxX = $"{rcpcn.FechaDoc.Year}{rcpcn.FechaDoc.Month:d2}{rcpcn.FechaDoc.Day:d2}{Path.GetFileName(dir)}";
-                NegocioAdmin.Mueve(Path.GetDirectoryName(dir), Path.Combine(obj.Rt, "Factura"),
-                    Path.GetFileName(dir), auxX);
-            }
+                if (obj.Mtdt)
+                    NegocioAdmin.CargaMetaData(obj, dir, objectSpace, "factura");
+                else
+                    NegocioAdmin.CargaDeArchivo(dir, emprs, vts, obj, objectSpace);
+            }*/
+            CrgDeXml(obj);
         }
 
         private VentaCfdi mPrms;
@@ -940,6 +955,115 @@ namespace FCap.Module.Controllers
                         mPrms = View.ObjectSpace.FindObject<VentaCfdi>(null);
                 }
                 return mPrms;
+            }
+        }
+
+        /*
+        private string key = "d12573bh";*/
+        private void popupWindowShowActionDscrgMsv_CustomizePopupWindowParams(object sender, DevExpress.ExpressApp.Actions.CustomizePopupWindowParamsEventArgs e)
+        {
+            IObjectSpace objectSpace = Application.CreateObjectSpace();
+            DescargaMasiva newObj;
+            Empresa mEmpresa = View.ObjectSpace.FindObject<Empresa>(null);
+
+            newObj = objectSpace.FindObject<DescargaMasiva>(null);
+            if (newObj == null)
+                newObj = objectSpace.CreateObject<DescargaMasiva>();
+
+            newObj.RfcEmsr = mEmpresa.Compania.Rfc;
+            newObj.RfcRcptr = mEmpresa.Compania.Rfc;
+            newObj.RtDscrg = Prms.RutaPdfVnts;
+
+            /*
+            string rfcaux = new SymmCrypto(SymmCrypto.SymmProvEnum.DES).
+                Decrypting(string.IsNullOrEmpty(mEmpresa.Contra) ? "LICENCIA" : mEmpresa.Contra, key);
+            string[] toks = rfcaux.Split('|');
+
+            if (toks[0] != mEmpresa.Compania.Rfc)
+            {
+                newObj.RfcEmsr =
+                newObj.RfcRcptr = "AAA010101AAA";
+            }*/
+            e.View = Application.CreateDetailView(objectSpace, "DescargaMasiva_DetailView", true, newObj);
+        }
+
+        // https://docs.microsoft.com/en-us/dotnet/api/system.io.compression.zipfile.extracttodirectory?view=netframework-4.8
+        private void popupWindowShowActionDscrgMsv_Execute(object sender, DevExpress.ExpressApp.Actions.PopupWindowShowActionExecuteEventArgs e)
+        {
+            DescargaMasiva obj = e.PopupWindowViewCurrentObject as DescargaMasiva;
+
+            if (obj != null)
+            {
+                int tntos = 0, mxTntos = 10;
+                string startPath = Path.Combine(obj.RtDscrg, "Paquetes");
+                if (!Directory.Exists(startPath))
+                    Directory.CreateDirectory(startPath);
+
+                string fi = obj.FchIncl.ToString("yyyy-MM-dd");
+                string ff = obj.FcnFnl.ToString("yyyy-MM-dd");
+                do
+                {
+                    if (DescargaMasivaSAT.Prueba(obj.ArchvPfx.FullName, obj.Cntrs,
+                        obj.RfcEmsr, obj.RfcRcptr, fi, ff, obj.Slctd, obj.Emtds, obj.Rcbds, startPath, obj.Mtdt))
+                    {
+                        string zipPath = Path.Combine(startPath, DescargaMasivaSAT.idPaquete + ".gzip");
+                        string extractPath = Path.Combine(obj.RtDscrg, "Extract");
+
+                        if (File.Exists(zipPath))
+                            ZipFile.ExtractToDirectory(zipPath, extractPath);
+                    }
+                    obj.EstdSlctd = (EEstadoSolicitud)DescargaMasivaSAT.estadoSolicitud;
+
+                    if (obj.EstdSlctd == EEstadoSolicitud.EnProceso
+                        || obj.EstdSlctd == EEstadoSolicitud.Aceptada)
+                    {
+                        obj.Slctd = DescargaMasivaSAT.idSolicitud;
+                        System.Threading.Thread.Sleep(5000);
+                    }
+
+                } while ((obj.EstdSlctd == EEstadoSolicitud.Aceptada
+                || obj.EstdSlctd == EEstadoSolicitud.EnProceso) && tntos++ < mxTntos);
+
+                if (obj.EstdSlctd == EEstadoSolicitud.Rechazada
+                    || obj.EstdSlctd == EEstadoSolicitud.Vencida
+                    || obj.EstdSlctd == EEstadoSolicitud.Terminada)
+                    obj.Slctd = string.Empty;
+
+                View.ObjectSpace.CommitChanges();
+
+
+                if (!obj.SlDscrgr)
+                {
+                    CargaRecepcion crgRc = View.ObjectSpace.FindObject<CargaRecepcion>(null);
+
+                    if (crgRc == null)
+                        crgRc = View.ObjectSpace.CreateObject<CargaRecepcion>();
+                    crgRc.Rt = Prms.RutaPdfVnts;
+                    crgRc.Mtdt = obj.Mtdt;
+
+                    CrgDeXml(crgRc);
+                    View.RefreshDataSource();
+                }
+            }
+        }
+
+        private void CrgDeXml(CargaRecepcion obj)
+        {
+            IObjectSpace objectSpace = Application.CreateObjectSpace();
+            // CargaRecepcion obj = e.PopupWindowViewCurrentObject as CargaRecepcion;
+
+            Empresa emprs = objectSpace.FindObject<Empresa>(null);
+            Ventas vts = objectSpace.FindObject<Ventas>(null);
+
+            string aux = Path.Combine(obj.Rt, "Extract");
+            string[] dirs = Directory.GetFiles(aux, obj.Mtdt ? "*.txt" : "*.xml");
+
+            foreach (string dir in dirs)
+            {
+                if (obj.Mtdt)
+                    NegocioAdmin.CargaMetaData(obj, dir, objectSpace, "factura");
+                else
+                    NegocioAdmin.CargaDeArchivo(dir, emprs, vts, obj, objectSpace);
             }
         }
     }
