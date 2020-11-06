@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="Cap.Clientes.BusinessObjects.Clientes.Cliente" IsDesigned="True" />
+  </BOModel>
+  <Views>
+    <DetailView Id="Cliente_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <TabbedGroup Id="Item1" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Cliente" ShowCaption="True" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Cliente_col1" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutGroup Id="Autof598dbd7-2237-4bf4-b815-d7a6d00f394a" ShowCaption="False" Caption="Autof598dbd7-2237-4bf4-b815-d7a6d00f394a(6)" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutGroup Id="Auto357067c5-38af-4970-88ee-8b16f7628888" ShowCaption="False" Caption="Auto357067c5-38af-4970-88ee-8b16f7628888(7)" Index="0" RelativeSize="100" IsNewNode="True">
+                      <LayoutGroup Id="Auto10127441-7d0d-4de4-8b9c-ccf18c2ec5cd" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="40.143369175627242" IsNewNode="True">
+                        <LayoutGroup Id="Auto3360374b-2918-4849-92c7-cfda59a073f7" ShowCaption="False" Caption="" Index="0" RelativeSize="66.616084977238245" IsNewNode="True">
+                          <LayoutGroup Id="Auto2b4612b8-7cce-4e65-abba-f03243616667" ShowCaption="False" Caption="Auto2b4612b8-7cce-4e65-abba-f03243616667(8)" Direction="Horizontal" Index="0" RelativeSize="16.964285714285715" IsNewNode="True">
+                            <LayoutItem Id="Clave" ViewItem="Clave" Index="0" RelativeSize="50.113895216400913" IsNewNode="True" />
+                            <LayoutItem Id="Status" ViewItem="Status" Index="1" RelativeSize="49.886104783599087" IsNewNode="True" />
+                          </LayoutGroup>
+                          <LayoutItem Id="Compania.Nombre" ViewItem="Compania.Nombre" Index="1" RelativeSize="10.714285714285714" IsNewNode="True" />
+                          <LayoutItem Id="Compania.Rfc" ViewItem="Compania.Rfc" Index="2" RelativeSize="10.714285714285714" IsNewNode="True" />
+                          <LayoutItem Id="FAlta" ViewItem="FAlta" Index="3" RelativeSize="10.714285714285714" IsNewNode="True" />
+                          <LayoutItem Id="FUltMovimiento" ViewItem="FUltMovimiento" Index="4" RelativeSize="10.714285714285714" IsNewNode="True" />
+                          <LayoutItem Id="UltmPryct" ViewItem="UltmPryct" Index="5" RelativeSize="10.714285714285714" IsNewNode="True" />
+                          <LayoutItem Id="Saldo" ViewItem="Saldo" Index="6" RelativeSize="10.714285714285714" IsNewNode="True" />
+                          <LayoutItem Id="Compania.Direccion" ViewItem="Compania.Direccion" Index="7" RelativeSize="10.714285714285714" IsNewNode="True" />
+                          <LayoutItem Id="Item6" Index="8" RelativeSize="8.0357142857142865" ViewItem="Item6" IsNewNode="True" />
+                        </LayoutGroup>
+                        <LayoutGroup Id="Auto1d02d5a0-6898-44a6-aabe-063f1dcaf8ce" ShowCaption="False" Caption="" Index="1" RelativeSize="33.383915022761762" IsNewNode="True">
+                          <LayoutItem Id="PorcDescuento" ViewItem="PorcDescuento" Index="0" RelativeSize="14.285714285714287" IsNewNode="True" />
+                          <LayoutItem Id="Als" ViewItem="Als" Index="1" RelativeSize="10.714285714285714" IsNewNode="True" />
+                          <LayoutItem Id="Vendedor" ViewItem="Vendedor" Index="2" RelativeSize="10.714285714285714" IsNewNode="True" />
+                          <LayoutItem Id="DiasCredito" ViewItem="DiasCredito" Index="3" RelativeSize="10.714285714285714" IsNewNode="True" />
+                          <LayoutItem Id="DiasPago" ViewItem="DiasPago" Index="4" RelativeSize="10.714285714285714" IsNewNode="True" />
+                          <LayoutItem Id="DiasRevision" ViewItem="DiasRevision" Index="5" RelativeSize="10.714285714285714" IsNewNode="True" />
+                          <LayoutItem Id="Clasifica" ViewItem="Clasifica" Index="6" RelativeSize="10.714285714285714" IsNewNode="True" />
+                          <LayoutItem Id="Cuenta" ViewItem="Cuenta" Index="7" RelativeSize="10.714285714285714" IsNewNode="True" />
+                          <LayoutItem Id="LimCredito" ViewItem="LimCredito" Index="8" RelativeSize="10.714285714285714" IsNewNode="True" />
+                        </LayoutGroup>
+                      </LayoutGroup>
+                      <LayoutItem Id="Notas" ViewItem="Notas" Index="1" RelativeSize="59.856630824372758" IsNewNode="True" />
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="1" Caption="Contactos" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Contactos_Group" ShowCaption="True" Caption="Contactos" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutItem Id="Contactos" ViewItem="Contactos" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutGroup Id="Cliente" Removed="True" />
+            <LayoutGroup Id="ProveedorCliente" RelativeSize="65.313653136531372" Removed="True">
+              <LayoutGroup Id="ProveedorCliente_col1" RelativeSize="49.938800489596083">
+                <LayoutItem Id="Clasifica" RelativeSize="7.3170731707317076" ViewItem="Clasifica" />
+                <LayoutItem Id="Compania.Direccion.Calle" RelativeSize="7.3170731707317076" ViewItem="Compania.Direccion.Calle" />
+                <LayoutItem Id="Compania.Direccion.Colonia" RelativeSize="7.3170731707317076" ViewItem="Compania.Direccion.Colonia" />
+                <LayoutItem Id="Compania.Direccion.CP" RelativeSize="7.3170731707317076" ViewItem="Compania.Direccion.CP" />
+                <LayoutItem Id="Compania.Direccion.Interior" RelativeSize="7.3170731707317076" ViewItem="Compania.Direccion.Interior" />
+                <LayoutItem Id="Compania.Direccion.Municipio" RelativeSize="9.75609756097561" ViewItem="Compania.Direccion.Municipio" />
+                <LayoutItem Id="Compania.Direccion.Numero" RelativeSize="7.3170731707317076" ViewItem="Compania.Direccion.Numero" />
+                <LayoutItem Id="Compania.Nombre" RelativeSize="7.3170731707317076" ViewItem="Compania.Nombre" />
+                <LayoutItem Id="Compania.Rfc" RelativeSize="7.3170731707317076" ViewItem="Compania.Rfc" />
+                <LayoutItem Id="DiasCredito" RelativeSize="9.75609756097561" ViewItem="DiasCredito" />
+                <LayoutItem Id="FAlta" RelativeSize="7.3170731707317076" ViewItem="FAlta" />
+                <LayoutItem Id="FUltMovimiento" RelativeSize="7.3170731707317076" ViewItem="FUltMovimiento" />
+                <LayoutItem Id="PorcDescuento" RelativeSize="7.3170731707317076" ViewItem="PorcDescuento" />
+              </LayoutGroup>
+              <LayoutGroup Id="ProveedorCliente_col2" RelativeSize="50.061199510403917">
+                <LayoutItem Id="Compania.Direccion.Ciudad" RelativeSize="9.75609756097561" ViewItem="Compania.Direccion.Ciudad" />
+                <LayoutItem Id="Compania.Direccion.Email" RelativeSize="7.3170731707317076" ViewItem="Compania.Direccion.Email" />
+                <LayoutItem Id="Compania.Direccion.Estado" RelativeSize="7.3170731707317076" ViewItem="Compania.Direccion.Estado" />
+                <LayoutItem Id="Compania.Direccion.Location" RelativeSize="7.3170731707317076" ViewItem="Compania.Direccion.Location" />
+                <LayoutItem Id="Compania.Direccion.Pais" RelativeSize="7.3170731707317076" ViewItem="Compania.Direccion.Pais" />
+                <LayoutItem Id="Compania.Direccion.Referencia" RelativeSize="7.3170731707317076" ViewItem="Compania.Direccion.Referencia" />
+                <LayoutItem Id="Compania.Direccion.TelefonoGeneral" RelativeSize="7.3170731707317076" ViewItem="Compania.Direccion.TelefonoGeneral" />
+                <LayoutItem Id="Compania.Direccion.TelefonoMovil" RelativeSize="7.3170731707317076" ViewItem="Compania.Direccion.TelefonoMovil" />
+                <LayoutItem Id="Compania.Direccion.TelGnralLad" RelativeSize="7.3170731707317076" ViewItem="Compania.Direccion.TelGnralLad" />
+                <LayoutItem Id="Compania.Direccion.TelMovLad" RelativeSize="7.3170731707317076" ViewItem="Compania.Direccion.TelMovLad" />
+                <LayoutItem Id="Compania.Direccion.Url" RelativeSize="7.3170731707317076" ViewItem="Compania.Direccion.Url" />
+                <LayoutItem Id="Cuenta" RelativeSize="9.75609756097561" ViewItem="Cuenta" />
+                <LayoutItem Id="Status" RelativeSize="7.3170731707317076" ViewItem="Status" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Contactos_Group" Removed="True" />
+          <LayoutGroup Id="SizeableEditors" RelativeSize="18.126888217522659" Caption="Notas" Direction="Horizontal" Removed="True">
+            <LayoutItem Id="Notas" RelativeSize="100" ViewItem="Notas" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Cliente_ListView">
+      <Filters>
+        <Filter Id="ClntsActvs" Caption="Activos" Criteria="[Status] = ##Enum#Cap.Clientes.BusinessObjects.Generales.EStatusPrvdClnt,Activo#" IsNewNode="True" />
+        <Filter Id="ClntsSspndds" Caption="Suspendidos, de Baja" Criteria="[Status] &lt;&gt; ##Enum#Cap.Clientes.BusinessObjects.Generales.EStatusPrvdClnt,Activo#" IsNewNode="True" />
+        <Filter Id="ClntsTds" Caption="Todos" IsNewNode="True" />
+      </Filters>
+    </ListView>
+  </Views>
+</Application>
