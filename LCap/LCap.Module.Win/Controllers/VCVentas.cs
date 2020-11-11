@@ -71,7 +71,10 @@ namespace LCap.Module.Win.Controllers
                                 {
                                     if (cit is CotizacionItem)
                                     {
-                                        pit = ObjectSpace.CreateObject<PedidoItem>();
+                                        if (fac is Pedido)
+                                            pit = ObjectSpace.CreateObject<PedidoItem>();
+                                        else
+                                            pit = ObjectSpace.CreateObject<RemisionItem>();
                                         pit.Antrr /*.Anterior*/ = cit as CotizacionItem;
                                     }
                                     else if (cit is PedidoItem)
@@ -83,6 +86,7 @@ namespace LCap.Module.Win.Controllers
                                     pit.Cantidad = cit.Cantidad;
                                     pit.Producto = cit.Producto;
                                     pit.MontoUnitario = cit.MontoUnitario;
+                                    pit.Precio = cit.Precio;
                                     pit.Costo = cit.Costo;
 
                                     fac.LasPartidas().Add(pit);
