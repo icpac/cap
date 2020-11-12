@@ -68,7 +68,7 @@ namespace Cap.Inventarios.BusinessObjects
         public string Alias
         {
             get { return FAlias; }
-            set { SetPropertyValue("Alias", ref FAlias, value); }
+            set { SetPropertyValue("Alias", ref FAlias, ValorString("Alias", value)); }
         }
         
         private string FDescrip;
@@ -307,7 +307,9 @@ namespace Cap.Inventarios.BusinessObjects
         //#region Factores de incremento
         private float FIncrementoP;
         [XafDisplayName("Incremento Precio")]
-        [ModelDefault("DisplayFormat", "{0:n3}%")]
+        // Nov 2020, por qué tenía esto ?
+        // [ModelDefault("DisplayFormat", "{0:n3}%")]
+        [ModelDefault("DisplayFormat", "{0:n1}%")]
         [VisibleInListView(false)]
         //[VisibleInDetailView(false)]
         [VisibleInLookupListView(false)]
