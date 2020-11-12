@@ -73,7 +73,8 @@ namespace Cap.Inventarios.BusinessObjects
         }
 
         private float mIncrmnt;
-        [ModelDefault("DisplayFormat", "{0:n3}%")]
+        //[ModelDefault("DisplayFormat", "{0:n3}%")]
+        [ModelDefault("DisplayFormat", "{0:n1}%")]
         [VisibleInLookupListView(false)]
         public float Incrmnt
         {
