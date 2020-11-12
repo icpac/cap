@@ -14,7 +14,7 @@ namespace MicroStore.Module.BusinessObjects
     public partial class Parametros : ISingleton
     {
         private UInt16 mUltmCmpr;
-        [DevExpress.Xpo.DisplayName("Última Compra")]
+        [XafDisplayName("Última Compra")]
         public ushort /*UInt16*/ UltmCmpr
         {
             get { return mUltmCmpr; }
@@ -22,7 +22,7 @@ namespace MicroStore.Module.BusinessObjects
         }
 
         private UInt16 mUltmVnt;
-        [DevExpress.Xpo.DisplayName("Última Venta")]
+        [XafDisplayName("Última Venta")]
         public ushort UltmVnt
         {
             get { return mUltmVnt; }
@@ -139,6 +139,14 @@ namespace MicroStore.Module.BusinessObjects
         {
             get { return mUndd; }
             set { SetPropertyValue("Undd", ref mUndd, value); }
+        }
+
+        private bool mUpdtPrcAuto;
+        [XafDisplayName("Actualiza Precios Automaticamente")]
+        public bool UpdtPrcAuto
+        {
+            get { return mUpdtPrcAuto; }
+            set { SetPropertyValue("UpdtPrcAuto", ref mUpdtPrcAuto, value); }
         }
 
         public override void AfterConstruction()

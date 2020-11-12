@@ -6,49 +6,50 @@
   <Views>
     <DetailView Id="Parametros_DetailView">
       <Layout>
-        <LayoutGroup Id="Main" RelativeSize="71.750433275563253">
+        <LayoutGroup Id="Main" RelativeSize="83.111954459203034">
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">
             <TabbedGroup Id="Item2" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
               <LayoutGroup Id="Item3" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
-                <LayoutItem Id="UltmCmpr" ViewItem="UltmCmpr" Index="0" RelativeSize="8.6720867208672079" IsNewNode="True" />
-                <LayoutItem Id="UltmVnt" ViewItem="UltmVnt" Index="1" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                <LayoutItem Id="UltPrvdr" ViewItem="UltPrvdr" Index="2" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                <LayoutItem Id="CncptVnt" ViewItem="CncptVnt" Index="3" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                <LayoutItem Id="CncptCnclrVnt" ViewItem="CncptCnclrVnt" Index="4" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                <LayoutItem Id="CncptCmpr" ViewItem="CncptCmpr" Index="5" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                <LayoutItem Id="CncptCnclrCmpr" ViewItem="CncptCnclrCmpr" Index="6" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                <LayoutItem Id="CncptAjstInvtrE" ViewItem="CncptAjstInvtrE" Index="7" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                <LayoutItem Id="CncptAjstInvtrS" ViewItem="CncptAjstInvtrS" Index="8" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                <LayoutGroup Id="Item4" ShowCaption="True" CaptionLocation="Top" Index="9" RelativeSize="39.295392953929536" Caption="En venta al Mostrador" IsNewNode="True">
-                  <LayoutItem Id="VntSnExstnc" ViewItem="VntSnExstnc" Index="0" RelativeSize="28.571428571428573" IsNewNode="True" />
-                  <LayoutItem Id="ImprmrTckt" ViewItem="ImprmrTckt" Index="1" RelativeSize="21.428571428571427" IsNewNode="True" />
-                  <LayoutItem Id="PrdctCptr" ViewItem="PrdctCptr" Index="2" RelativeSize="21.428571428571427" IsNewNode="True" />
-                  <LayoutItem Id="Undd" ViewItem="Undd" Index="3" RelativeSize="28.571428571428573" IsNewNode="True" />
+                <LayoutItem Id="UltmCmpr" ViewItem="UltmCmpr" Index="0" RelativeSize="8.1424936386768447" IsNewNode="True" />
+                <LayoutItem Id="UltmVnt" ViewItem="UltmVnt" Index="1" RelativeSize="6.106870229007634" IsNewNode="True" />
+                <LayoutItem Id="UltPrvdr" ViewItem="UltPrvdr" Index="2" RelativeSize="6.106870229007634" IsNewNode="True" />
+                <LayoutItem Id="CncptVnt" ViewItem="CncptVnt" Index="3" RelativeSize="6.106870229007634" IsNewNode="True" />
+                <LayoutItem Id="CncptCnclrVnt" ViewItem="CncptCnclrVnt" Index="4" RelativeSize="6.106870229007634" IsNewNode="True" />
+                <LayoutItem Id="CncptCmpr" ViewItem="CncptCmpr" Index="5" RelativeSize="6.106870229007634" IsNewNode="True" />
+                <LayoutItem Id="CncptCnclrCmpr" ViewItem="CncptCnclrCmpr" Index="6" RelativeSize="6.106870229007634" IsNewNode="True" />
+                <LayoutItem Id="CncptAjstInvtrE" ViewItem="CncptAjstInvtrE" Index="7" RelativeSize="6.106870229007634" IsNewNode="True" />
+                <LayoutItem Id="CncptAjstInvtrS" ViewItem="CncptAjstInvtrS" Index="8" RelativeSize="6.106870229007634" IsNewNode="True" />
+                <LayoutGroup Id="Item4" ShowCaption="True" CaptionLocation="Top" Index="9" RelativeSize="43.002544529262089" Caption="En venta al Mostrador" IsNewNode="True">
+                  <LayoutItem Id="VntSnExstnc" ViewItem="VntSnExstnc" Index="0" RelativeSize="23.529411764705884" IsNewNode="True" />
+                  <LayoutItem Id="ImprmrTckt" ViewItem="ImprmrTckt" Index="1" RelativeSize="17.647058823529413" IsNewNode="True" />
+                  <LayoutItem Id="PrdctCptr" ViewItem="PrdctCptr" Index="2" RelativeSize="17.647058823529413" IsNewNode="True" />
+                  <LayoutItem Id="Undd" ViewItem="Undd" Index="3" RelativeSize="17.647058823529413" IsNewNode="True" />
+                  <LayoutItem Id="UpdtPrcAuto" ViewItem="UpdtPrcAuto" Index="4" RelativeSize="23.529411764705884" IsNewNode="True" />
                 </LayoutGroup>
               </LayoutGroup>
               <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="1" RelativeSize="100" IsNewNode="True">
-                <LayoutGroup Id="Autoafc9485f-bb99-4e41-81a1-1024995ffc30" ShowCaption="False" Index="0" RelativeSize="49.854227405247812" IsNewNode="True">
-                  <LayoutItem Id="VntCfdi.UltFactura" ViewItem="VntCfdi.UltFactura" Index="0" RelativeSize="8.6720867208672079" IsNewNode="True" />
-                  <LayoutItem Id="VntCfdi.Serie" ViewItem="VntCfdi.Serie" Index="1" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                  <LayoutItem Id="VntCfdi.UltDevolucion" ViewItem="VntCfdi.UltDevolucion" Index="2" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                  <LayoutItem Id="VntCfdi.UltNotaC" ViewItem="VntCfdi.UltNotaC" Index="3" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                  <LayoutItem Id="VntCfdi.UltClie" ViewItem="VntCfdi.UltClie" Index="4" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                  <LayoutItem Id="VntCfdi.UltProd" ViewItem="VntCfdi.UltProd" Index="5" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                  <LayoutItem Id="VntCfdi.UltmPg" ViewItem="VntCfdi.UltmPg" Index="6" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                  <LayoutItem Id="VntCfdi.SrPg" ViewItem="VntCfdi.SrPg" Index="7" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                  <LayoutItem Id="VntCfdi.CncptCbr" ViewItem="VntCfdi.CncptCbr" Index="8" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                  <LayoutItem Id="VntCfdi.CncptPg" ViewItem="VntCfdi.CncptPg" Index="9" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                  <LayoutItem Id="Cfdi.RutaPdfVnts" ViewItem="Cfdi.RutaPdfVnts" Index="10" RelativeSize="32.791327913279133" IsNewNode="True" />
+                <LayoutGroup Id="Autoafc9485f-bb99-4e41-81a1-1024995ffc30" ShowCaption="False" Index="0" RelativeSize="49.83050847457627" IsNewNode="True">
+                  <LayoutItem Id="VntCfdi.UltFactura" ViewItem="VntCfdi.UltFactura" Index="0" RelativeSize="8.1424936386768447" IsNewNode="True" />
+                  <LayoutItem Id="VntCfdi.Serie" ViewItem="VntCfdi.Serie" Index="1" RelativeSize="6.106870229007634" IsNewNode="True" />
+                  <LayoutItem Id="VntCfdi.UltDevolucion" ViewItem="VntCfdi.UltDevolucion" Index="2" RelativeSize="6.106870229007634" IsNewNode="True" />
+                  <LayoutItem Id="VntCfdi.UltNotaC" ViewItem="VntCfdi.UltNotaC" Index="3" RelativeSize="6.106870229007634" IsNewNode="True" />
+                  <LayoutItem Id="VntCfdi.UltClie" ViewItem="VntCfdi.UltClie" Index="4" RelativeSize="6.106870229007634" IsNewNode="True" />
+                  <LayoutItem Id="VntCfdi.UltProd" ViewItem="VntCfdi.UltProd" Index="5" RelativeSize="6.106870229007634" IsNewNode="True" />
+                  <LayoutItem Id="VntCfdi.UltmPg" ViewItem="VntCfdi.UltmPg" Index="6" RelativeSize="6.106870229007634" IsNewNode="True" />
+                  <LayoutItem Id="VntCfdi.SrPg" ViewItem="VntCfdi.SrPg" Index="7" RelativeSize="6.106870229007634" IsNewNode="True" />
+                  <LayoutItem Id="VntCfdi.CncptCbr" ViewItem="VntCfdi.CncptCbr" Index="8" RelativeSize="6.106870229007634" IsNewNode="True" />
+                  <LayoutItem Id="VntCfdi.CncptPg" ViewItem="VntCfdi.CncptPg" Index="9" RelativeSize="6.106870229007634" IsNewNode="True" />
+                  <LayoutItem Id="Cfdi.RutaPdfVnts" ViewItem="Cfdi.RutaPdfVnts" Index="10" RelativeSize="36.895674300254456" IsNewNode="True" />
                 </LayoutGroup>
-                <LayoutGroup Id="Auto218f22d4-0f26-4683-91cb-c2536238a81a" ShowCaption="False" Index="1" RelativeSize="50.145772594752188" IsNewNode="True">
-                  <LayoutItem Id="VntCfdi.SendM" ViewItem="VntCfdi.SendM" Index="0" RelativeSize="8.6720867208672079" IsNewNode="True" />
-                  <LayoutItem Id="VntCfdi.SendCopy" ViewItem="VntCfdi.SendCopy" Index="1" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                  <LayoutItem Id="VntCfdi.LeyImpst1" ViewItem="VntCfdi.LeyImpst1" Index="2" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                  <LayoutItem Id="VntCfdi.LeyImpst2" ViewItem="VntCfdi.LeyImpst2" Index="3" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                  <LayoutItem Id="VntCfdi.LeyImpst3" ViewItem="VntCfdi.LeyImpst3" Index="4" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                  <LayoutItem Id="VntCfdi.LeyImpst4" ViewItem="VntCfdi.LeyImpst4" Index="5" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                  <LayoutItem Id="VntCfdi.CapMayus" ViewItem="VntCfdi.CapMayus" Index="6" RelativeSize="6.5040650406504064" IsNewNode="True" />
-                  <LayoutItem Id="Cfdi.LeyImpst4" ViewItem="Cfdi.LeyImpst4" Index="7" RelativeSize="52.303523035230356" IsNewNode="True" />
+                <LayoutGroup Id="Auto218f22d4-0f26-4683-91cb-c2536238a81a" ShowCaption="False" Index="1" RelativeSize="50.16949152542373" IsNewNode="True">
+                  <LayoutItem Id="VntCfdi.SendM" ViewItem="VntCfdi.SendM" Index="0" RelativeSize="8.1424936386768447" IsNewNode="True" />
+                  <LayoutItem Id="VntCfdi.SendCopy" ViewItem="VntCfdi.SendCopy" Index="1" RelativeSize="6.106870229007634" IsNewNode="True" />
+                  <LayoutItem Id="VntCfdi.LeyImpst1" ViewItem="VntCfdi.LeyImpst1" Index="2" RelativeSize="6.106870229007634" IsNewNode="True" />
+                  <LayoutItem Id="VntCfdi.LeyImpst2" ViewItem="VntCfdi.LeyImpst2" Index="3" RelativeSize="6.106870229007634" IsNewNode="True" />
+                  <LayoutItem Id="VntCfdi.LeyImpst3" ViewItem="VntCfdi.LeyImpst3" Index="4" RelativeSize="6.106870229007634" IsNewNode="True" />
+                  <LayoutItem Id="VntCfdi.LeyImpst4" ViewItem="VntCfdi.LeyImpst4" Index="5" RelativeSize="6.106870229007634" IsNewNode="True" />
+                  <LayoutItem Id="VntCfdi.CapMayus" ViewItem="VntCfdi.CapMayus" Index="6" RelativeSize="6.106870229007634" IsNewNode="True" />
+                  <LayoutItem Id="Cfdi.LeyImpst4" ViewItem="Cfdi.LeyImpst4" Index="7" RelativeSize="55.216284987277355" IsNewNode="True" />
                 </LayoutGroup>
               </LayoutGroup>
             </TabbedGroup>
@@ -87,7 +88,7 @@
             </LayoutGroup>
           </LayoutGroup>
         </LayoutGroup>
-        <LayoutItem Id="VntCfdi.RutaPdfVnts" ViewItem="VntCfdi.RutaPdfVnts" Index="1" RelativeSize="28.249566724436743" IsNewNode="True" />
+        <LayoutItem Id="VntCfdi.RutaPdfVnts" ViewItem="VntCfdi.RutaPdfVnts" Index="1" RelativeSize="16.888045540796963" IsNewNode="True" />
       </Layout>
     </DetailView>
   </Views>
