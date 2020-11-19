@@ -274,7 +274,9 @@ namespace Cap.Generales.BusinessObjects.Direccion
         {
             get
             {
-                return String.Format("{0} {1}-{2} \n{3} \n{4} {5} \n{6}, {7} \nC.P.:{8}", Calle, Numero, Interior, Colonia, Ciudad, Municipio, Estado, Pais, CP);
+
+                return String.Format("{0} {1}-{2} \n{3} \n{4} {5} \n{6}, {7} \n{8}", Calle, Numero, Interior, Colonia, Ciudad, Municipio, Estado, Pais, 
+                    string.IsNullOrEmpty(CP) ? string.Empty : $"C.P.: {CP}");
             }
         }
 
@@ -286,9 +288,43 @@ namespace Cap.Generales.BusinessObjects.Direccion
         {
             get
             {
-                return String.Format("{0} {1}{9}{2} {3} {4} {5} {6}, {7} C.P.:{8}", Calle, Numero, 
-                    Interior, Colonia, Ciudad, Municipio, Estado, Pais, CP, 
-                    string.IsNullOrEmpty(Interior) ? string.Empty : "-");
+                string aux = CP;
+
+                if (!string.IsNullOrEmpty(aux))
+                    aux = $"CP.: {aux.Trim()}";
+
+                if (!string.IsNullOrEmpty(aux) && aux.Length > 1 &&
+                    aux[aux.Length - 1] != ',' && !string.IsNullOrEmpty(Calle))
+                    aux = $"{aux},  {Calle.Trim()}";
+                
+                if (!string.IsNullOrEmpty(aux) && aux.Length > 1 &&
+                    aux[aux.Length - 1] != ',' && !string.IsNullOrEmpty(Numero))
+                    aux = $"{aux},  {Numero.Trim()}";
+                
+                if (!string.IsNullOrEmpty(aux) && aux.Length > 1 &&
+                    aux[aux.Length - 1] != ',' && !string.IsNullOrEmpty(Interior))
+                    aux = $"{aux}-{Interior.Trim()}";
+                
+                if (!string.IsNullOrEmpty(aux) && aux.Length > 1 &&
+                    aux[aux.Length - 1] != ',' && !string.IsNullOrEmpty(Colonia))
+                    aux = $"{aux},  {Colonia.Trim()}";
+                
+                if (!string.IsNullOrEmpty(aux) && aux.Length > 1 &&
+                    aux[aux.Length - 1] != ',' && !string.IsNullOrEmpty(Municipio))
+                    aux = $"{aux},  {Municipio.Trim()}";
+                
+                if (!string.IsNullOrEmpty(aux) && aux.Length > 1 &&
+                    aux[aux.Length - 1] != ',' && !string.IsNullOrEmpty(Ciudad))
+                    aux = $"{aux},  {Ciudad.Trim()}";
+                
+                if (!string.IsNullOrEmpty(aux) && aux.Length > 1 &&
+                    aux[aux.Length - 1] != ',' && !string.IsNullOrEmpty(Estado))
+                    aux = $"{aux},  {Estado.Trim()}";
+                
+                if (!string.IsNullOrEmpty(aux) && aux.Length > 1 &&
+                    aux[aux.Length - 1] != ',' && !string.IsNullOrEmpty(Pais))
+                    aux = $"{aux},  {Pais.Trim()}";
+                return aux;
             }
         }
 
