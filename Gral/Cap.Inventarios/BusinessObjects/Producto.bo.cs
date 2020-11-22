@@ -83,7 +83,6 @@ namespace Cap.Inventarios.BusinessObjects
 
         private string FDescripL;
         [VisibleInListView(false)]
-        // [VisibleInDetailView(false)]
         [VisibleInLookupListView(false)]
         [Size(SizeAttribute.Unlimited)]
         public string DescripcionLarga
@@ -204,6 +203,7 @@ namespace Cap.Inventarios.BusinessObjects
         [VisibleInDetailView(false)]
         [VisibleInListView(false)]
         [VisibleInLookupListView(false)]
+        [XafDisplayName("Existencia minima")]
         public double StockMinimo
         {
             get { return FMinimo; }
@@ -417,7 +417,7 @@ namespace Cap.Inventarios.BusinessObjects
         [VisibleInDetailView(false)]
         [VisibleInListView(false)]
         [VisibleInLookupListView(false)]
-        [NonPersistent]
+        // [NonPersistent]  Nov 2020
         public EProductoCosteo Costeo
         {
             get { return FCosteo; }
@@ -885,8 +885,9 @@ namespace Cap.Inventarios.BusinessObjects
             PrecioPublico = 0;
 
             PDesc = 0;
+            /*
             PRetIsr = 10;
-            PRetIva = 66.67f;
+            PRetIva = 66.67f;*/
 
             Serie = false;
             Sku = string.Empty;
