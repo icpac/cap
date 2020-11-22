@@ -58,8 +58,8 @@
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="CloneObjectModule" Version="20.1.6.0" IsNewNode="True" />
-    <SchemaModule Name="SystemModule" Version="20.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="CloneObjectModule" Version="20.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="20.2.3.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <DetailView Id="ChangeDatabaseStandardAuthenticationLogonParameters_DetailView">
@@ -229,22 +229,23 @@
       <Layout>
         <LayoutGroup Id="Main">
           <LayoutGroup Id="SimpleEditors">
-            <TabbedGroup Id="Item1" RelativeSize="46.909667194928687">
+            <TabbedGroup Id="Item1" RelativeSize="54.428044280442805">
               <LayoutGroup Id="Producto">
-                <LayoutGroup Id="Producto_col1" RelativeSize="50">
+                <LayoutGroup Id="Producto_col1" RelativeSize="49.927641099855279">
                   <LayoutItem Id="Clave" RelativeSize="12.5" />
                   <LayoutItem Id="Descripcion" RelativeSize="9.375" />
                   <LayoutItem Id="Esquema" Index="2" RelativeSize="9.375" />
                   <LayoutItem Id="Marca" Index="3" RelativeSize="9.375" />
                   <LayoutItem Id="PrecioPublico" Index="4" RelativeSize="9.375" />
-                  <LayoutItem Id="FUltimaVenta" Index="5" RelativeSize="9.375" />
+                  <LayoutItem Id="IncrementoP" ViewItem="IncrementoP" Index="5" RelativeSize="9.375" IsNewNode="True" />
                   <LayoutItem Id="FechaAlta" Index="6" RelativeSize="9.375" />
+                  <LayoutItem Id="FUltimaVenta" Index="6" RelativeSize="8.5714285714285712" Removed="True" />
                   <LayoutItem Id="Existencia" ViewItem="Existencia" Index="7" RelativeSize="9.375" IsNewNode="True" />
                   <LayoutItem Id="StockMinimo" ViewItem="StockMinimo" Index="8" RelativeSize="9.375" IsNewNode="True" />
                   <LayoutItem Id="StockMaximo" ViewItem="StockMaximo" Index="9" RelativeSize="12.5" IsNewNode="True" />
                   <LayoutItem Id="CapEnFact" Removed="True" />
                 </LayoutGroup>
-                <LayoutGroup Id="Producto_col2" RelativeSize="50">
+                <LayoutGroup Id="Producto_col2" RelativeSize="50.072358900144721">
                   <LayoutItem Id="USalida" RelativeSize="12.5" />
                   <LayoutItem Id="Status" RelativeSize="9.375" />
                   <LayoutItem Id="Tipo" RelativeSize="9.375" />
@@ -252,16 +253,19 @@
                   <LayoutItem Id="PrdctSrvcCfdi" RelativeSize="9.375" Index="3" />
                   <LayoutItem Id="Lotes" ViewItem="Lotes" Index="4" RelativeSize="9.375" IsNewNode="True" />
                   <LayoutItem Id="FchCdcdd" ViewItem="FchCdcdd" Index="5" RelativeSize="9.375" IsNewNode="True" />
-                  <LayoutItem Id="CostoUltimo" ViewItem="CostoUltimo" Index="6" RelativeSize="40.625" IsNewNode="True" />
+                  <LayoutItem Id="CostoUltimo" ViewItem="CostoUltimo" Index="6" RelativeSize="9.375" IsNewNode="True" />
+                  <LayoutItem Id="CostoPromedio" ViewItem="CostoPromedio" Index="7" RelativeSize="9.375" IsNewNode="True" />
+                  <LayoutItem Id="FUltimaVenta" ViewItem="FUltimaVenta" Index="8" RelativeSize="9.375" IsNewNode="True" />
+                  <LayoutItem Id="Costeo" ViewItem="Costeo" Index="9" RelativeSize="12.5" IsNewNode="True" />
                   <LayoutItem Id="PrVnta" RelativeSize="9.375" Removed="True" />
                 </LayoutGroup>
               </LayoutGroup>
               <LayoutGroup Id="Item3">
-                <LayoutItem Id="DescripcionLarga" RelativeSize="50" />
-                <LayoutItem Id="Notas" RelativeSize="50" />
+                <LayoutItem Id="DescripcionLarga" RelativeSize="45.703125" />
+                <LayoutItem Id="Notas" RelativeSize="54.296875" />
               </LayoutGroup>
             </TabbedGroup>
-            <LayoutItem Id="Image" RelativeSize="53.090332805071313" />
+            <LayoutItem Id="Image" RelativeSize="45.571955719557195" />
           </LayoutGroup>
         </LayoutGroup>
       </Layout>
@@ -298,7 +302,7 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <DetailView Id="Recepcion_DetailView">
+    <DetailView Id="Recepcion_DetailView" DefaultFocusedItem="Proveedor">
       <Layout>
         <LayoutGroup Id="Main">
           <LayoutGroup Id="SimpleEditors" RelativeSize="34.071550255536629">
