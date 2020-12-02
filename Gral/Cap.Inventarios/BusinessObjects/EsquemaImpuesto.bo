@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="FCap.Module.BusinessObjects.EsquemaImpuesto" IsDesigned="True" ImageName="Total" />
+  </BOModel>
+  <Views>
+    <DetailView Id="FCap.Module.BusinessObjects.EsquemaImpuesto_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100" ImageName="">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100" ImageName="">
+            <LayoutGroup Id="EsquemaImpuesto" RelativeSize="100" ImageName="" Direction="Vertical">
+              <LayoutGroup Id="EsquemaImpuesto_col1" RelativeSize="92" ImageName="">
+                <LayoutGroup Id="Auto518fea19-3f1f-469d-ab5e-5217c2386602" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="5" IsNewNode="True">
+                  <LayoutItem Id="Clave" ViewItem="Clave" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                  <LayoutItem Id="Item1" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto0d981450-090d-4fd0-a584-d0966c0ba3b3" ShowCaption="False" Caption="" Index="1" RelativeSize="94" IsNewNode="True">
+                  <LayoutItem Id="Descripcion" ViewItem="Descripcion" SizeConstraintsType="Default" Index="0" RelativeSize="4" IsNewNode="True" />
+                  <LayoutGroup Id="Auto8b5374a6-b6ae-4898-909b-5c95d80eb7ba" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="95" IsNewNode="True">
+                    <LayoutGroup Id="Autofed8c004-31a6-4afa-8f60-778d2b758ccc" ShowCaption="False" Caption="" Index="0" RelativeSize="50" IsNewNode="True">
+                      <LayoutItem Id="Impuesto1" ViewItem="Impuesto1" SizeConstraintsType="Default" Index="0" RelativeSize="4" IsNewNode="True" />
+                      <LayoutItem Id="AplImpuesto1" ViewItem="AplImpuesto1" SizeConstraintsType="Default" Index="1" RelativeSize="4" IsNewNode="True" />
+                      <LayoutItem Id="Impuesto2" ViewItem="Impuesto2" SizeConstraintsType="Default" Index="2" RelativeSize="4" IsNewNode="True" />
+                      <LayoutItem Id="AplImpuesto2" ViewItem="AplImpuesto2" SizeConstraintsType="Default" Index="3" RelativeSize="85" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Autof6e29167-a4a4-4a0e-bfc4-b96ff38355ee" ShowCaption="False" Caption="" Index="1" RelativeSize="49" IsNewNode="True">
+                      <LayoutItem Id="Impuesto3" ViewItem="Impuesto3" SizeConstraintsType="Default" Index="0" RelativeSize="4" IsNewNode="True" />
+                      <LayoutItem Id="AplImpuesto3" ViewItem="AplImpuesto3" SizeConstraintsType="Default" Index="1" RelativeSize="4" IsNewNode="True" />
+                      <LayoutItem Id="Impuesto4" ViewItem="Impuesto4" SizeConstraintsType="Default" Index="2" RelativeSize="4" IsNewNode="True" />
+                      <LayoutItem Id="AplImpuesto4" ViewItem="AplImpuesto4" SizeConstraintsType="Default" Index="3" RelativeSize="85" IsNewNode="True" />
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutItem Id="AplImpuesto1" SizeConstraintsType="Default" RelativeSize="4" ViewItem="AplImpuesto1" Removed="True" />
+                <LayoutItem Id="Clave" SizeConstraintsType="Default" RelativeSize="5" ViewItem="Clave" Removed="True" />
+                <LayoutItem Id="Descripcion" SizeConstraintsType="Default" RelativeSize="4" ViewItem="Descripcion" Removed="True" />
+                <LayoutItem Id="Impuesto1" SizeConstraintsType="Default" RelativeSize="4" ViewItem="Impuesto1" Removed="True" />
+                <LayoutItem Id="Impuesto2" SizeConstraintsType="Default" RelativeSize="4" ViewItem="Impuesto2" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="EsquemaImpuesto_col2" RelativeSize="32" ImageName="" Caption="EsquemaImpuesto_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="AplImpuesto2" ViewItem="AplImpuesto2" Removed="True" />
+                <LayoutItem Id="AplImpuesto3" ViewItem="AplImpuesto3" Removed="True" />
+                <LayoutItem Id="AplImpuesto4" ViewItem="AplImpuesto4" Removed="True" />
+                <LayoutItem Id="Impuesto3" ViewItem="Impuesto3" Removed="True" />
+                <LayoutItem Id="Impuesto4" ViewItem="Impuesto4" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
