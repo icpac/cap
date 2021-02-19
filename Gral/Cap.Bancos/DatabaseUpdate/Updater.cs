@@ -4,9 +4,6 @@ using DevExpress.Data.Filtering;
 using DevExpress.ExpressApp.Updating;
 using System.Collections.Generic;
 using Cap.Bancos.BusinessObjects;
-using DevExpress.Persistent.BaseImpl;
-using DevExpress.XtraReports.UI;
-using DevExpress.Persistent.Base.ReportsV2;
 
 namespace Cap.Bancos.DatabaseUpdate
 {
@@ -28,10 +25,6 @@ namespace Cap.Bancos.DatabaseUpdate
             //}
 
             Datos();
-
-            /*TIT Dic 2019, lo intenté pero no lo logré, por el momento lo quito.
-            //CreateReport("Cuentas");
-            //CreateReport("Movimientos", typeof(MovimientoB));*/
 
             ObjectSpace.CommitChanges(); //This line persists created object(s).
         }
@@ -110,43 +103,6 @@ namespace Cap.Bancos.DatabaseUpdate
                 Presupuesto prs = ObjectSpace.CreateObject<Presupuesto>();
                 prs.Save();
             }
-        }
-
-        private void CreateReport(string reportName, Type td)
-        {
-            // TI Nov 2016 Esta parte está obsoleta, para que funcione hay que incluir dos modulos que están obsoletos
-            /*
-            ReportData reportdata = ObjectSpace.FindObject<ReportData>(new BinaryOperator("Name", reportName));
-
-            if (reportdata == null)
-            {
-                reportdata = ObjectSpace.CreateObject<ReportData>();
-                XafReport rep = new XafReport() { ObjectSpace = ObjectSpace };
-                rep.LoadLayout(GetType().Assembly.GetManifestResourceStream(String.Format("Cap.Bancos.Reportes.{0}.repx", reportName)));
-                rep.ReportName = reportName;
-                reportdata.SaveReport(rep);
-            } */
-
-            /* Dic 2019 Pude crear el reporte incrustado, pero no funcionó al ejecutarlo
-            ReportDataV2 reportdata = ObjectSpace.FindObject<ReportDataV2>
-                (new BinaryOperator("DisplayName", reportName));
-
-            if (reportdata == null)
-            {
-                reportdata = ObjectSpace.CreateObject<ReportDataV2>();
-                reportdata.DisplayName = reportName;
-
-                CollectionDataSource dataSource = new CollectionDataSource();
-                dataSource.ObjectTypeName = td.FullName;
-                dataSource.CriteriaString = string.Empty;
-
-                XtraReport reportV2 = new XtraReport();
-                reportV2.LoadLayout(GetType().Assembly.GetManifestResourceStream(String.Format("Cap.Bancos.Reportes.{0}.repx", reportName)));
-                reportV2.DisplayName = reportName;
-                reportV2.DataSource = dataSource;
-
-                DevExpress.ExpressApp.ReportsV2.ReportDataProvider.ReportsStorage.SaveReport(reportdata, reportV2);
-            }*/
         }
     }
 }
