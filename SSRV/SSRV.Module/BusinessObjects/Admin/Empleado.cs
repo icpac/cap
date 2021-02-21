@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Linq;
-using System.Text;
 using DevExpress.Xpo;
-using DevExpress.ExpressApp;
-using System.ComponentModel;
-using DevExpress.ExpressApp.DC;
-using DevExpress.Data.Filtering;
 using DevExpress.Persistent.Base;
-using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
-using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using DevExpress.ExpressApp.ConditionalAppearance;
 using Cap.Empresa.BusinessObjects.Empresa;
@@ -57,26 +49,6 @@ namespace SSRV.Module.BusinessObjects.Admin
 
 
 
-        /* TI
-        private Contratacion mRegimen;
-        [RuleRequiredField("RuleRequiredField for Empleado.Regimen", DefaultContexts.Save, "Debe capturar el Régimen del Empleado", SkipNullOrEmptyValues = false)]
-        [DisplayName("Régimen")]
-        [VisibleInListView(false)]
-        public Contratacion Regimen
-        {
-            get { return mRegimen; }
-            set { SetPropertyValue("Regimen", ref mRegimen, value); }
-        }*/
-
-        /* TI
-        private Riesgo mRiesgo;
-        [VisibleInListView(false)]
-        public Riesgo Riesgo
-        {
-            get { return mRiesgo; }
-            set { SetPropertyValue("Riesgo", ref mRiesgo, value); }
-        }*/
-
         private string mContrato;
         [VisibleInDetailView(false)]
         [VisibleInListView(false)]
@@ -99,40 +71,6 @@ namespace SSRV.Module.BusinessObjects.Admin
             set { SetPropertyValue("Jornada", ref mJornada, value); }
         }
 
-        /*
-        private Banco mBanco;
-        [VisibleInListView(false)]
-        [VisibleInLookupListView(false)]
-        public Banco Banco
-        {
-            get { return mBanco; }
-            set { SetPropertyValue("Banco", ref mBanco, value); }
-        }*/
-
-        /* TI
-        private Puesto mPuesto;
-        public Puesto Puesto
-        {
-            get { return mPuesto; }
-            set { SetPropertyValue("Puesto", ref mPuesto, value); }
-        }*/
-
-        /* TI
-        private Departamento mDepartamento;
-        public Departamento Departamento
-        {
-            get { return mDepartamento; }
-            set { SetPropertyValue("Departamento", ref mDepartamento, value); }
-        }*/
-
-        /*TI
-        // #region + Formas de Pago
-        [DisplayName("Formas de Pago")]
-        [Association("Empleado-FormasP", typeof(NItemFormaP)), DevExpress.Xpo.Aggregated]
-        public XPCollection FormasP
-        {
-            get { return GetCollection("FormasP"); }
-        }*/
 
         // #region + Clabe interbancaria
         private string FClabe;
@@ -175,24 +113,5 @@ namespace SSRV.Module.BusinessObjects.Admin
             get { return Persona != null && !string.IsNullOrEmpty(Persona.Curp); }
         }
 
-        /*TI
-        private Zona mZona;
-        /// <summary>
-        /// Qué región atiende este empleado.
-        /// </summary>
-        public Zona Zona
-        {
-            get { return mZona; }
-            set { SetPropertyValue("Zona", ref mZona, value); }
-        }*/
-
-        /*TI
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-
-            Persona.Curp = "C";
-            Persona.Rfc = "AAA010101AAA";
-        }*/
     }
 }
