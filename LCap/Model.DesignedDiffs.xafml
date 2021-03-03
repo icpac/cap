@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="LCap" Logo="ICPAC" Company="iCPAC" Description="Control Administrativo" PreferredLanguage="es-MX">
+  <BOModel>
+    <Class Name="LCap.Module.BusinessObjects.Compras.POCompra" IsDesigned="True" />
+    <Class Name="LCap.Module.BusinessObjects.General.ConceptoDocumento" IsDesigned="True" />
+    <Class Name="LCap.Module.BusinessObjects.Inventarios.InventarioF" IsDesigned="True" />
+    <Class Name="LCap.Module.BusinessObjects.Inventarios.InventarioFItem" IsDesigned="True" />
+    <Class Name="LCap.Module.BusinessObjects.Inventarios.KitItem" IsDesigned="True" />
+  </BOModel>
+  <NavigationItems DefaultChildItemsDisplayStyle="List" NavigationStyle="Accordion" StartupNavigationItem="">
+    <Items>
+      <Item Id="Ventas" Index="1" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="NewDocumento" Index="0" IsNewNode="True" />
+          <Item Id="NewPedido" ViewId="Pedido_DetailView" Index="1" IsNewNode="True" />
+          <Item Id="Cotizacion_ListView" Index="2" IsNewNode="True" />
+          <Item Id="Pedido_ListView" Index="3" IsNewNode="True" />
+          <Item Id="Remision_ListView" Index="4" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Compras" Index="2" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="ConceptoCxp_ListView" Removed="True" />
+          <Item Id="Cxp_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Inventarios" Index="3" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Producto_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Clientes" Index="4" />
+      <Item Id="Proveedores" Index="5">
+        <Items>
+          <Item Id="ConceptoCxp_ListView" ViewId="ConceptoCxp_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Cxp_ListView" ViewId="Cxp_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Bancos" Index="6" />
+      <Item Id="Nomina" Index="7" />
+      <Item Id="Empresa" Index="8" Removed="True" />
+      <Item Id="Reports" ImageName="Report_Bound_32x32" Index="8">
+        <Items>
+          <Item Id="Analysis_ListView" ImageName="BO_PivotChart" Visible="False" />
+        </Items>
+      </Item>
+      <Item Id="Cfg. Nomina" Index="9" />
+      <Item Id="Configuración" Index="10" />
+      <Item Id="Default" Index="11" Caption="Seguridad" ImageName="User-Options_Large">
+        <Items>
+          <Item Id="ConceptoCxc_ListView" Caption="Conceptos de Cxc" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="20.2.5.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="19.1.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="20.2.5.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Banco_DetailView">
+      <Items>
+        <PropertyEditor Id="RazonScl" Caption="Razón Scl" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Banco" RelativeSize="21.096345514950166">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Banco" IsNewNode="True">
+                <LayoutItem Id="Clave" ViewItem="Clave" SizeConstraintsType="Default" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" />
+                <LayoutItem Id="Nombre" ViewItem="Nombre" SizeConstraintsType="Default" Index="1" RelativeSize="27.272727272727273" IsNewNode="True" />
+                <LayoutItem Id="RazonScl" ViewItem="RazonScl" SizeConstraintsType="Default" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="RazonScl" SizeConstraintsType="Default" RelativeSize="21.774193548387096" Index="1" Removed="True" />
+              <LayoutItem Id="Clave" Removed="True" />
+              <LayoutItem Id="Nombre" SizeConstraintsType="Default" RelativeSize="19.35483870967742" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ChangeDatabaseStandardAuthenticationLogonParameters_DetailView">
+      <Items>
+        <StaticImage Id="Imagen" SizeMode="AutoSize" ImageName="Security_Permission_72x72" IsNewNode="True" />
+        <StaticText Id="LogonText" IsNewNode="True" />
+        <StaticText Id="PasswordHint" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="ChangeDatabaseStandardAuthenticationLogonParameters" Direction="Horizontal" RelativeSize="100">
+              <LayoutItem Id="Imagen" ViewItem="Imagen" Index="0" RelativeSize="8.6115992970123028" IsNewNode="True" />
+              <LayoutGroup Id="Auto4119da41-ed40-4ccb-8ede-1fc4419b6a83" ShowCaption="False" Index="1" RelativeSize="91.3884007029877" IsNewNode="True">
+                <LayoutItem Id="LogonText" ViewItem="LogonText" Index="0" RelativeSize="4.2229729729729728" IsNewNode="True" />
+                <LayoutItem Id="Name" ViewItem="Name" Index="1" RelativeSize="4.0540540540540544" IsNewNode="True" />
+                <LayoutItem Id="UserName" ViewItem="UserName" Index="2" RelativeSize="4.0540540540540544" IsNewNode="True" />
+                <LayoutItem Id="Password" ViewItem="Password" Index="3" RelativeSize="4.0540540540540544" IsNewNode="True" />
+                <LayoutItem Id="PasswordHint" ShowCaption="True" ViewItem="PasswordHint" Index="4" RelativeSize="83.61486486486487" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Name" Removed="True" />
+              <LayoutItem Id="Password" Removed="True" />
+              <LayoutItem Id="UserName" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Cliente_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="Cliente">
+                <LayoutGroup Id="Cliente_col1">
+                  <LayoutGroup Id="Autof598dbd7-2237-4bf4-b815-d7a6d00f394a">
+                    <LayoutGroup Id="Auto357067c5-38af-4970-88ee-8b16f7628888">
+                      <LayoutGroup Id="Auto10127441-7d0d-4de4-8b9c-ccf18c2ec5cd" RelativeSize="32.646592709984155">
+                        <LayoutGroup Id="Auto3360374b-2918-4849-92c7-cfda59a073f7" RelativeSize="66.468842729970333">
+                          <LayoutGroup Id="Auto2b4612b8-7cce-4e65-abba-f03243616667" RelativeSize="18.446601941747574">
+                            <LayoutItem Id="Clave" RelativeSize="50" />
+                            <LayoutItem Id="Status" RelativeSize="50" />
+                          </LayoutGroup>
+                          <LayoutItem Id="Compania.Nombre" RelativeSize="11.650485436893204" />
+                          <LayoutItem Id="Compania.Rfc" RelativeSize="11.650485436893204" />
+                          <LayoutItem Id="FAlta" RelativeSize="11.650485436893204" />
+                          <LayoutItem Id="FUltMovimiento" RelativeSize="11.650485436893204" />
+                          <LayoutItem Id="Saldo" Index="5" RelativeSize="11.650485436893204" />
+                          <LayoutItem Id="Compania.Direccion" Index="6" RelativeSize="11.650485436893204" />
+                          <LayoutItem Id="Item6" Index="7" RelativeSize="11.650485436893204" />
+                          <LayoutItem Id="UltmPryct" Removed="True" />
+                        </LayoutGroup>
+                        <LayoutGroup Id="Auto1d02d5a0-6898-44a6-aabe-063f1dcaf8ce" RelativeSize="33.531157270029674">
+                          <LayoutItem Id="PorcDescuento" RelativeSize="15.533980582524272" />
+                          <LayoutItem Id="Als" RelativeSize="11.650485436893204" />
+                          <LayoutItem Id="Vendedor" RelativeSize="11.650485436893204" />
+                          <LayoutItem Id="DiasCredito" RelativeSize="11.650485436893204" />
+                          <LayoutItem Id="DiasPago" RelativeSize="11.650485436893204" />
+                          <LayoutItem Id="DiasRevision" RelativeSize="11.650485436893204" />
+                          <LayoutItem Id="Clasifica" RelativeSize="11.650485436893204" />
+                          <LayoutItem Id="LimCredito" RelativeSize="14.563106796116506" Index="7" />
+                          <LayoutItem Id="Cuenta" RelativeSize="10.434782608695652" Removed="True" />
+                        </LayoutGroup>
+                      </LayoutGroup>
+                      <LayoutItem Id="Notas" RelativeSize="67.353407290015852" />
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Cotizacion_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="29.15129151291513">
+            <LayoutGroup Id="DocumenSal">
+              <LayoutGroup Id="Auto1e81fc8d-95db-4343-b5d1-c893c5e6a097" RelativeSize="49.924585218702866" />
+              <LayoutGroup Id="Auto2d6668eb-b70e-4af1-af80-569fa7512fdf" RelativeSize="50.075414781297134">
+                <LayoutItem Id="PorcDesc" RelativeSize="15.189873417721518" />
+                <LayoutItem Id="Vnddr" ViewItem="Vnddr" Index="4" RelativeSize="34.177215189873415" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="CotizacionItems_Group" RelativeSize="41.697416974169741" />
+          <LayoutGroup Id="Autoe834a585-2d99-4e6a-adea-bd9b86cf5e87" RelativeSize="29.15129151291513">
+            <LayoutItem Id="Notas" RelativeSize="49.924585218702866" />
+            <LayoutGroup Id="Auto6fa36e85-6cf2-48cd-8085-1606aca40071" RelativeSize="50.075414781297134" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Cotizacion_ListView">
+      <Columns>
+        <ColumnInfo Id="Vnddr" Index="6" />
+      </Columns>
+    </ListView>
+    <DetailView Id="DocumentoSalida_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="50.503355704697988">
+            <LayoutGroup Id="DocumentoSalida">
+              <LayoutGroup Id="DocumentoSalida_col1" RelativeSize="49.92">
+                <LayoutItem Id="Tipo" RelativeSize="12.213740458015268" />
+                <LayoutItem Id="Secuencial" RelativeSize="9.16030534351145" />
+                <LayoutItem Id="Cliente" RelativeSize="9.16030534351145" />
+                <LayoutItem Id="Domicilio" RelativeSize="9.16030534351145" />
+                <LayoutItem Id="FechaDoc" RelativeSize="9.16030534351145" />
+                <LayoutItem Id="Condicion" RelativeSize="9.16030534351145" />
+                <LayoutItem Id="DocEnlace" ViewItem="DocEnlace" Index="6" RelativeSize="41.984732824427482" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="DocumentoSalida_col2" RelativeSize="50.08">
+                <LayoutItem Id="Moneda" RelativeSize="12.213740458015268" />
+                <LayoutItem Id="TipoCambio" RelativeSize="9.16030534351145" />
+                <LayoutItem Id="PorcDesc" RelativeSize="9.16030534351145" />
+                <LayoutItem Id="Rgmn" RelativeSize="9.16030534351145" />
+                <LayoutItem Id="Cnclbl" RelativeSize="9.16030534351145" />
+                <LayoutItem Id="TpRlcn" Index="5" RelativeSize="9.16030534351145" />
+                <LayoutItem Id="FechaCan" Index="6" RelativeSize="9.16030534351145" />
+                <LayoutItem Id="Uuid" Index="7" RelativeSize="9.16030534351145" />
+                <LayoutItem Id="SelloSatCan" Index="8" RelativeSize="23.664122137404579" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="18.959731543624162" />
+          <LayoutGroup Id="Autod7f06ae4-fbc6-45f5-8fad-fbf41e89b59e" RelativeSize="30.536912751677853">
+            <LayoutItem Id="Notas" RelativeSize="33.38485316846986" />
+            <LayoutGroup Id="Auto2934278e-1bda-4cd9-878a-477e712826b9" RelativeSize="33.23029366306028">
+              <LayoutItem Id="FrmPg" ViewItem="FrmPg" Index="0" RelativeSize="16.483516483516482" IsNewNode="True" />
+              <LayoutItem Id="FrmPg1" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Auto00f9273f-fa32-4344-888a-cb44f20f1ec7" RelativeSize="33.38485316846986" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Empresa_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Moneda_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Pedido_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="81.164383561643831">
+            <LayoutGroup Id="Documento" RelativeSize="51.0548523206751">
+              <LayoutGroup Id="Documento_col1" RelativeSize="49.716874292185729">
+                <LayoutItem Id="Tipo" RelativeSize="15.384615384615385" />
+                <LayoutItem Id="Clave" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="Cliente" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="Domicilio" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="DocEnlace" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="FechaDoc" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="FchEntrg" ViewItem="FchEntrg" Index="6" RelativeSize="11.538461538461538" IsNewNode="True" />
+                <LayoutItem Id="Condicion" Index="7" RelativeSize="15.384615384615385" />
+              </LayoutGroup>
+              <LayoutGroup Id="Documento_col2" RelativeSize="50.283125707814271">
+                <LayoutItem Id="Moneda" RelativeSize="15.384615384615385" />
+                <LayoutItem Id="TipoCambio" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="SuPedido" ViewItem="SuPedido" Index="2" RelativeSize="11.538461538461538" IsNewNode="True" />
+                <LayoutItem Id="PorcDesc" Index="3" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="FechaCan" Index="4" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="MotivCan" Index="5" RelativeSize="11.538461538461538" />
+                <LayoutItem Id="Vnddr" ViewItem="Vnddr" Index="6" RelativeSize="11.538461538461538" IsNewNode="True" />
+                <LayoutItem Id="Cmsn" ViewItem="Cmsn" Index="7" RelativeSize="15.384615384615385" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Pedido" Index="1" RelativeSize="7.5949367088607591" Direction="Horizontal" Removed="True">
+              <LayoutItem Id="Vnddr" Index="0" RelativeSize="100" Removed="True" />
+              <LayoutItem Id="Cmsn" Removed="True" />
+              <LayoutItem Id="FchEntrg" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="PedidoItems_Group" RelativeSize="48.9451476793249" Index="1" />
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="18.835616438356166">
+            <LayoutItem Id="Notas" RelativeSize="57.7728776185226" />
+            <LayoutGroup Id="Auto0143d60b-bb33-46a1-a217-48158b87228a" RelativeSize="42.2271223814774">
+              <LayoutItem Id="SubTotal" RelativeSize="27.272727272727273" />
+              <LayoutItem Id="DescuentoTotal" RelativeSize="21.818181818181817" />
+              <LayoutItem Id="Impuesto04" RelativeSize="21.818181818181817" />
+              <LayoutItem Id="Total" RelativeSize="29.09090909090909" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Producto_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item1" RelativeSize="56.2390158172232">
+              <LayoutGroup Id="Producto">
+                <LayoutGroup Id="Producto_col1" RelativeSize="48.176100628930818">
+                  <LayoutItem Id="Clave" RelativeSize="11.428571428571429" />
+                  <LayoutItem Id="Descripcion" RelativeSize="8.5714285714285712" />
+                  <LayoutItem Id="CapEnFact" RelativeSize="8.5714285714285712" />
+                  <LayoutItem Id="Esquema" RelativeSize="8.5714285714285712" />
+                  <LayoutItem Id="Marca" RelativeSize="8.5714285714285712" />
+                  <LayoutItem Id="PrecioPublico" RelativeSize="8.5714285714285712" />
+                  <LayoutItem Id="FUltimaVenta" RelativeSize="8.5714285714285712" />
+                  <LayoutItem Id="FechaAlta" RelativeSize="8.5714285714285712" />
+                  <LayoutItem Id="Existencia" ViewItem="Existencia" Index="8" RelativeSize="8.5714285714285712" IsNewNode="True" />
+                  <LayoutItem Id="StockMinimo" ViewItem="StockMinimo" Index="9" RelativeSize="8.5714285714285712" IsNewNode="True" />
+                  <LayoutItem Id="StockMaximo" ViewItem="StockMaximo" Index="10" RelativeSize="11.428571428571429" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Producto_col2" RelativeSize="51.823899371069182">
+                  <LayoutItem Id="USalida" RelativeSize="11.428571428571429" />
+                  <LayoutItem Id="Status" RelativeSize="8.5714285714285712" />
+                  <LayoutItem Id="Tipo" RelativeSize="8.5714285714285712" />
+                  <LayoutItem Id="PrVnta" RelativeSize="8.5714285714285712" />
+                  <LayoutItem Id="ImprmFrmt" RelativeSize="8.5714285714285712" />
+                  <LayoutItem Id="PrdctSrvcCfdi" RelativeSize="8.5714285714285712" />
+                  <LayoutItem Id="PorRecibir" ViewItem="PorRecibir" Index="6" RelativeSize="8.5714285714285712" IsNewNode="True" />
+                  <LayoutItem Id="PorSurtir" ViewItem="PorSurtir" Index="7" RelativeSize="8.5714285714285712" IsNewNode="True" />
+                  <LayoutItem Id="CostoUltimo" ViewItem="CostoUltimo" Index="8" RelativeSize="28.571428571428573" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item3">
+                <LayoutItem Id="DescripcionLarga" RelativeSize="32.857142857142854" />
+                <LayoutItem Id="Notas" RelativeSize="67.142857142857139" />
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutItem Id="Image" RelativeSize="43.7609841827768" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Proveedor_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="ProveedorCliente">
+                <LayoutGroup Id="ProveedorCliente_col1">
+                  <LayoutGroup Id="Auto38e8679d-76f0-432d-b7b2-1d131388266f" RelativeSize="25.079365079365079">
+                    <LayoutGroup Id="Auto89dfcfbb-e7c7-40bd-bbcb-8086d81ff9f1">
+                      <LayoutItem Id="Clave" RelativeSize="20.253164556962027" />
+                      <LayoutItem Id="Compania.Nombre" RelativeSize="15.189873417721518" />
+                      <LayoutItem Id="Compania.Rfc" RelativeSize="15.189873417721518" />
+                      <LayoutItem Id="FAlta" RelativeSize="15.189873417721518" />
+                      <LayoutItem Id="FUltMovimiento" RelativeSize="15.189873417721518" />
+                      <LayoutItem Id="Compania.Direccion" RelativeSize="18.9873417721519" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Auto09ba9aff-8373-43bc-91e1-cc3d9f6ed3be">
+                      <LayoutItem Id="Status" RelativeSize="20.253164556962027" />
+                      <LayoutItem Id="DiasCredito" RelativeSize="15.189873417721518" />
+                      <LayoutItem Id="PorcDescuento" RelativeSize="15.189873417721518" />
+                      <LayoutItem Id="Clasifica" Index="3" RelativeSize="49.367088607594937" />
+                      <LayoutItem Id="Cuenta" Removed="True" />
+                    </LayoutGroup>
+                  </LayoutGroup>
+                  <LayoutItem Id="Notas" RelativeSize="74.920634920634924" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Remision_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="31.164383561643834">
+            <LayoutGroup Id="DocumenSal">
+              <LayoutGroup Id="Autob469f88b-a739-427f-a617-b82f659a0d77" RelativeSize="49.944873208379271">
+                <LayoutItem Id="Tipo" RelativeSize="17.582417582417584" />
+                <LayoutItem Id="Clave" ViewItem="Clave" Index="1" RelativeSize="13.186813186813186" IsNewNode="True" />
+                <LayoutItem Id="Cliente" RelativeSize="13.186813186813186" Index="2" />
+                <LayoutItem Id="Domicilio" RelativeSize="13.186813186813186" Index="3" />
+                <LayoutItem Id="DocEnlace" ViewItem="DocEnlace" Index="4" RelativeSize="13.186813186813186" IsNewNode="True" />
+                <LayoutItem Id="FechaDoc" RelativeSize="13.186813186813186" Index="5" />
+                <LayoutItem Id="Condicion" RelativeSize="16.483516483516482" Index="6" />
+              </LayoutGroup>
+              <LayoutGroup Id="Autodfd63a85-7d87-428e-bcfe-6928fcec724b" RelativeSize="50.055126791620729">
+                <LayoutItem Id="Moneda" RelativeSize="17.582417582417584" />
+                <LayoutItem Id="TipoCambio" RelativeSize="13.186813186813186" />
+                <LayoutItem Id="PorcDesc" RelativeSize="13.186813186813186" />
+                <LayoutItem Id="FechaCan" RelativeSize="13.186813186813186" />
+                <LayoutItem Id="MotivCan" ViewItem="MotivCan" Index="4" RelativeSize="13.186813186813186" IsNewNode="True" />
+                <LayoutItem Id="Vnddr" ViewItem="Vnddr" Index="5" RelativeSize="13.186813186813186" IsNewNode="True" />
+                <LayoutItem Id="Cmsn" ViewItem="Cmsn" Index="6" RelativeSize="16.483516483516482" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="RemisionItems_Group" RelativeSize="41.780821917808218" />
+          <LayoutGroup Id="Auto98da5282-1888-4582-98a3-c6199598ba3e" RelativeSize="27.054794520547944">
+            <LayoutItem Id="Notas" RelativeSize="49.944873208379271" />
+            <LayoutGroup Id="Auto37d68afb-d09b-4631-8b32-162f87cc8b91" RelativeSize="50.055126791620729" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
