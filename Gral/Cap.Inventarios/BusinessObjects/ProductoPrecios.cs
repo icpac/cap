@@ -73,6 +73,7 @@ namespace Cap.Inventarios.BusinessObjects
         }
 
         private float mIncrmnt;
+        [XafDisplayName("Incremento")]
         //[ModelDefault("DisplayFormat", "{0:n3}%")]
         [ModelDefault("DisplayFormat", "{0:n1}%")]
         [VisibleInLookupListView(false)]
