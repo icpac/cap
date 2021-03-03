@@ -390,7 +390,6 @@ namespace Cap.Ventas.BusinessObjects
 
         private decimal Imps2;
         [Appearance("Documento.Impuesto02", AppearanceItemType = "LayoutItem", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "Impuesto02 = 0")]
-        // [Appearance("Dcmnt.Impuesto02", Context = "DetailView", Enabled = false, FontStyle = FontStyle.Italic)]
         //[VisibleInDetailView(false)]
         public decimal Impuesto02
         {
@@ -831,6 +830,8 @@ namespace Cap.Ventas.BusinessObjects
             StatusEnlc = DocumentoStatus.Ninguno;
             Moneda = Session.FindObject<Moneda>(new BinaryOperator("Sistema", true));
             Empresa = Session.FindObject<Empresa>(null);
+
+            Tipo = DocumentoTipo.Ninguno;
         }
 
         // #region + Causante
