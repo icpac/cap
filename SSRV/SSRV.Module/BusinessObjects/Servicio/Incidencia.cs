@@ -16,8 +16,9 @@ using Cap.Inventarios.BusinessObjects;
 
 namespace SSRV.Module.BusinessObjects.Servicio
 {
+    [Appearance("Incidencia.Change", Context ="DetailView", Enabled = false, TargetItems= "Plz, HrsUsds", FontStyle = FontStyle.Italic, Criteria = "IsNewObject(This) == false")]
     [Appearance("Incidencia.Wait", AppearanceItemType = "LayoutItem", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "Status != 'ASIGNACION' || Status != 'ESPERA'", TargetItems = "FchInc, TmInc")]
-    [Appearance("Incidencia.New", AppearanceItemType = "LayoutItem", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Method = "IsNewObject", TargetItems = "FchCt, TmCt, FchTrmncn, TimeTrmncn, Partidas, Rspnsbl")]  // Status, 
+    [Appearance("Incidencia.New", AppearanceItemType = "LayoutItem", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Method = "IsNewObject", TargetItems = "FchCt, TmCt, FchTrmncn, TimeTrmncn, Partidas, Rspnsbl")] 
     [Appearance("Incidencia.NewD", Context ="DetailView", Enabled = false, Method = "IsNewObject", TargetItems = "TimeSolictd, FchSolctd", FontStyle = FontStyle.Italic)]
     [Appearance("Incidencia.Trmnd", AppearanceItemType = "LayoutItem", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Criteria = "Status != 'OPERATIVO'", TargetItems = "FchTrmncn, TimeTrmncn")]
     [Appearance("Incidencia.Visible", AppearanceItemType = "LayoutItem", Context ="DetailView", Visibility =ViewItemVisibility.Hide, TargetItems = "Status")]
@@ -74,16 +75,17 @@ namespace SSRV.Module.BusinessObjects.Servicio
             get { return mClnt; }
             set
             {
+                /*
                 if (mClnt != value)
-                {
-                    mClnt = value;
+                {*/
                     if (!IsLoading)
                     {
-                        // Refresh the Accessory Property data source 
-                        RefreshAvailablePolizas();
-                        SetPropertyValue("Clnt", ref mClnt, value);
+                    // Refresh the Accessory Property data source 
+                    SetPropertyValue("Clnt", ref mClnt, value);
+                    RefreshAvailablePolizas();
                     }
-                }
+                    /*
+                }*/
             }
         }
 
@@ -97,17 +99,21 @@ namespace SSRV.Module.BusinessObjects.Servicio
             get { return mPlz; }
             set
             {
+                /*
                 if (mPlz != value)
-                {
+                {*/
                     SetPropertyValue("Plz", ref mPlz, value);
-                    if (!IsLoading)
+
+                    /* TIT Mrz 2020 Todavía no lo uso
+                    if (!IsLoading && value != null)
                     {
                         // Refresh the Accessory Property data source 
                         RefreshAvailableServicios();
-                        if (mClnt == null || mClnt != mPlz.Clnt)
+                        if (mClnt == null || (mPlz != null && mClnt != mPlz.Clnt))
                             mClnt = mPlz.Clnt;
-                    }
-                }
+                    }*/
+                    /*
+                }*/
             }
         }
 
@@ -197,7 +203,10 @@ namespace SSRV.Module.BusinessObjects.Servicio
             set { SetPropertyValue("Rspnsbl", ref mRspnsbl, value); }
         }
 
+        // Cambiamos FchCita  a  FchAtncn
         private DateTime mFchCita;
+        [Obsolete("Cambiar a fecha de atención")]
+        // Si se me olvida capturarla (?)
         [DevExpress.Xpo.DisplayName("Fecha de Atención")]
         // [Appearance("Incidencia.FchCt", AppearanceItemType = "LayoutItem", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Method = "IsCliente")]
         [ModelDefault("DisplayFormat", "{0:dd MMM yyyy}")]
@@ -209,6 +218,7 @@ namespace SSRV.Module.BusinessObjects.Servicio
         }
 
         private DateTime mtimeCita;
+        [Obsolete("Cambiar a fecha de atención")]
         [ModelDefault("PropertyEditorType", "SSRV.Module.Web.Editors.ASPxTimePropertyEditor")]
         [ImmediatePostData]
         [VisibleInListView(false)]
@@ -222,6 +232,36 @@ namespace SSRV.Module.BusinessObjects.Servicio
                 SetPropertyValue("TmCt", ref mtimeCita, value);
                 if (!IsLoading && FchCt != null)
                     FchCt = new DateTime(FchCt.Year, FchCt.Month, FchCt.Day, value.Hour, value.Minute, 0);
+            }
+        }
+
+        private DateTime mFchAtncn;
+        // Si se me olvida capturarla (?)
+        [DevExpress.Xpo.DisplayName("Fecha de Atención")]
+        [ModelDefault("DisplayFormat", "{0:dd MMM yyyy}")]
+        [ModelDefault("EditMask", "d-MM-yyyy")]
+        public DateTime FchAtncn
+        {
+            get { return mFchAtncn; }
+            set { SetPropertyValue("FchAtncn", ref mFchAtncn, value); }
+        }
+
+
+        private DateTime mTmAtncn;
+        [ModelDefault("PropertyEditorType", "SSRV.Module.Web.Editors.ASPxTimePropertyEditor")]
+        [ImmediatePostData]
+        [VisibleInListView(false)]
+        // [Appearance("SHrCit", AppearanceItemType = "LayoutItem", Context = "DetailView", Visibility = ViewItemVisibility.Hide, Method = "IsCliente")]
+        [DevExpress.Xpo.DisplayName("Hora de Atención")]
+        public DateTime TmAtncn
+        {
+            get { return mTmAtncn; }
+            set
+            {
+                SetPropertyValue("TmCt", ref mTmAtncn, value);
+                if (!IsLoading && FchAtncn != null)
+                    FchAtncn = new DateTime(FchAtncn.Year, FchAtncn.Month, FchAtncn.Day, 
+                        value.Hour, value.Minute, 0);
             }
         }
 
@@ -276,8 +316,9 @@ namespace SSRV.Module.BusinessObjects.Servicio
         }
 
         private string mFll;
+        [EditorAlias(EditorAliases.RichTextPropertyEditor)]
         [VisibleInListView(true)]
-        [XafDisplayName("Falla")]
+        [XafDisplayName("Falla (Situación)")]
         [RuleRequiredField("RuleRequiredField for Incidencia.Falla", DefaultContexts.Save, "Debe capturar la Falla", SkipNullOrEmptyValues = false)]
         [Size(SizeAttribute.Unlimited)]
         public string Fll
@@ -394,7 +435,7 @@ namespace SSRV.Module.BusinessObjects.Servicio
                 filt.Operands.Add(new BinaryOperator("HrsRstnts", 0, BinaryOperatorType.Greater));
                 availablePolizas.Criteria = filt;
             }
-            Plz = null;
+            // Plz = null;
         }
 
 
@@ -494,5 +535,4 @@ namespace SSRV.Module.BusinessObjects.Servicio
         [ImageName("State_priority_low")]
         Baja
     }
-
 }
