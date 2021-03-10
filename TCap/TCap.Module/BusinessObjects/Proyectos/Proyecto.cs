@@ -144,10 +144,10 @@ namespace TCap.Module.BusinessObjects.Proyectos
             set { SetPropertyValue("FchAlt", ref mFchAlt, value); }
         }
 
-        private DateTime mFchInc;
+        private DateTime? mFchInc;
         [ModelDefault("DisplayFormat", "{0:dd MMM yyyy}")]
         [XafDisplayName("Fecha de Inicio")]
-        public DateTime FchInc
+        public DateTime? FchInc
         {
             get { return mFchInc; }
             set { SetPropertyValue("FchInc", ref mFchInc, value); }
@@ -358,6 +358,7 @@ namespace TCap.Module.BusinessObjects.Proyectos
             get { return GetCollection("Involucrados"); }
         }
 
+        [Obsolete("Usar mejor Informacion")]
         [Association("Proyecto-Incidencias", typeof(Incidencia)), DevExpress.Xpo.Aggregated]
         public XPCollection Incidencias
         {

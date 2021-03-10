@@ -50,6 +50,10 @@ namespace TCap.Module.BusinessObjects.Proyectos
 
             FchAlt = DateTime.Now;
             Stts = TASKSTATUS.Espera;
+            FchInc = DateTime.Now;
+            Infrmcn = new Informacion(Session);
+            /*
+            Infrmcn.Pryct = Pryct;*/
         }
         //private string _PersistentProperty;
         //[XafDisplayName("My display name"), ToolTip("My hint message")]
@@ -82,6 +86,8 @@ namespace TCap.Module.BusinessObjects.Proyectos
                     oldPryct = oldPryct ?? mPryct;
                     oldPryct.UpdateHrsEstmdsTtl(true);
                 }
+                if (!IsLoading && Infrmcn != null && Infrmcn.Pryct == null)
+                    Infrmcn.Pryct = value;
             }
         }
 
@@ -208,7 +214,7 @@ namespace TCap.Module.BusinessObjects.Proyectos
             set { SetPropertyValue("TpP", ref mTpP, value); }
         }
 
-        private string _Text; // mNts;
+        private string _Text;
         [EditorAlias("RTF")]
         [Size(SizeAttribute.Unlimited)]
         [XafDisplayName("Notas")]
@@ -236,12 +242,25 @@ namespace TCap.Module.BusinessObjects.Proyectos
             }
         }
 
+        // Porque en gueb listview pone rtf editor y ocupa mucho espacio.
+        string mNts;
+        [XafDisplayName("Observaciones")]
+        [Size(SizeAttribute.Unlimited)]
+        public string Obsrvcns
+        {
+            get { return mNts; }
+            set { SetPropertyValue("Obsrvcns", ref mNts, value); }
+        }
+
+        //[Obsolete("Usar mejor Informacion")]
         [Association("Actividad-Incidencias", typeof(Incidencia)), DevExpress.Xpo.Aggregated]
         public XPCollection Incidencias
         {
             get { return GetCollection("Incidencias"); }
         }
 
+        [VisibleInListView(false)]
+        //[Obsolete("Usar mejor Informacion")]
         //[Appearance("Actividad.Archivos", AppearanceItemType = "LayoutItem", Context = "DetailView", Criteria = "Archivos.Count = 0", Visibility = ViewItemVisibility.Hide)]
         [Association("Actividad-ExpedienteArchivos", typeof(ExpedienteArchivo)), DevExpress.Xpo.Aggregated]
         public XPCollection Archivos
@@ -262,14 +281,23 @@ namespace TCap.Module.BusinessObjects.Proyectos
 
 
 
+        private Informacion mInfrmcn;
+        [DevExpress.Xpo.Aggregated]
+        [ExpandObjectMembers(ExpandObjectMembers.Always)]
+        [XafDisplayName("Informacion")]
+        public Informacion Infrmcn
+        {
+            get { return mInfrmcn; }
+            set { SetPropertyValue("Infrmcn", ref mInfrmcn, value); }
+        }
 
 
-        private DateTime? mFchVncmnt;
+        private DateTime? mFchVncmnt = null;
         [ModelDefault("DisplayFormat", "{0:dd MMM yyyy}")]
         [XafDisplayName("Fecha de Vencimiento")]
         public DateTime? FchVncmnt
         {
-            get { return task.DueDate; }
+            get { return task.DueDate.Year == 1 ? mFchVncmnt : task.DueDate; }
             set
             {
                 DateTime? oldValue = task.DueDate;
