@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views>
+    <DetailView Id="ChangeDatabaseStandardAuthenticationLogonParameters_DetailView">
+      <Items>
+        <StaticImage Id="Imgn" Caption="Imgn(8)" />
+        <StaticText Id="LogonText" Text="¡Bienvenido! A continuación capture su usuario y contraseña." Caption="LogonText(10)" />
+        <StaticText Id="PasswordHint" Text="(Por omisión, el usuario 'soporte', no tiene contraseña)" Caption=" " />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="ChangeDatabaseStandardAuthenticationLogonParameters" Caption="ChangeDatabaseStandardAuthenticationLogonParameters">
+              <LayoutGroup Id="Auto836d9319-07eb-447d-bcd7-415901179dfb" Caption="Auto836d9319-07eb-447d-bcd7-415901179dfb(5)" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="ChangeDatabaseStandardAuthenticationLogonParametersWeb_DetailView">
+      <Items>
+        <StaticImage Id="LogonImage" Caption="LogonImage(9)" />
+        <StaticText Id="LogonText" Text="Bienvenido! Por favor ingrese la clave, su nombre de usuario y contraseña a continuación." Caption="LogonText(8)" />
+      </Items>
+    </DetailView>
+    <DetailView Id="Cliente_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item2">
+              <LayoutGroup Id="Cliente">
+                <LayoutGroup Id="Cliente_col1">
+                  <LayoutGroup Id="Autoe839f336-4854-4d17-b194-789c6c955891" Caption="Autoe839f336-4854-4d17-b194-789c6c955891(6)">
+                    <LayoutGroup Id="Auto21ae6a5c-865f-4f9c-bf3a-737768d7758f" Caption="Auto21ae6a5c-865f-4f9c-bf3a-737768d7758f(7)">
+                      <LayoutGroup Id="Autoc218cca9-7af9-4c94-bb2a-2d66981bbdf8" Caption="Autoc218cca9-7af9-4c94-bb2a-2d66981bbdf8(8)" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Auto44439dc7-63d6-4965-bd4f-ee571410bf45" Caption="Auto44439dc7-63d6-4965-bd4f-ee571410bf45(14)" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Autob625e15a-53f0-4d4c-af6c-3fb4d8435794" Caption="" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item3" Caption="Contactos">
+                <LayoutGroup Id="Contactos_Group" Caption="Contactos" />
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutGroup Id="Cliente">
+              <LayoutGroup Id="Cliente_col2" Caption="Cliente_col2" />
+            </LayoutGroup>
+            <LayoutGroup Id="ProveedorCliente" Caption="Dirección">
+              <LayoutGroup Id="ProveedorCliente_col2" Caption="ProveedorCliente_col2" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Caption="Notas" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Config_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Config" Caption="Configuración" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Empleado_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="EmpleadoBase" Caption="Empleado">
+              <LayoutGroup Id="EmpleadoBase_col2" Caption="EmpleadoBase_col2" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Incidencia_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SizeableEditors" Caption="Falla" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Poliza_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SizeableEditors" Caption="Notas" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
