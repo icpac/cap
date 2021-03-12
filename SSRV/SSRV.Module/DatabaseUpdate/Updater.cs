@@ -56,7 +56,7 @@ namespace SSRV.Module.DatabaseUpdate
                 userAdmin = ObjectSpace.CreateObject<PermissionPolicyUser>();
                 userAdmin.UserName = "root";
                 // Set a password if the standard authentication type is used
-                userAdmin.SetPassword("litros67");
+                userAdmin.SetPassword("");
             }
             // If a role with the Administrators name doesn't exist in the database, create this role
             PermissionPolicyRole adminRole = ObjectSpace.FindObject<PermissionPolicyRole>(new BinaryOperator("Name", "Administrators"));
